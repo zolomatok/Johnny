@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		096271BE16FC848D7025CE8F /* Pods_Johnny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAC55D79516509BE86E3275 /* Pods_Johnny.framework */; };
+		F3E4CAF71D256069005B30AB /* Johnny.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E4CAF61D256069005B30AB /* Johnny.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3E4CAFF1D256192005B30AB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F3E4CAFE1D256192005B30AB /* Podfile */; };
+		F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB001D25634F005B30AB /* Disk.swift */; };
+		F3E4CB0C1D25634F005B30AB /* CGSize+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */; };
+		F3E4CB0D1D25634F005B30AB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Extensions.swift */; };
+		F3E4CB0E1D25634F005B30AB /* NSFileManager+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */; };
+		F3E4CB0F1D25634F005B30AB /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
+		F3E4CB101D25634F005B30AB /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
+		F3E4CB111D25634F005B30AB /* UIImageView+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */; };
+		F3E4CB121D25634F005B30AB /* Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB081D25634F005B30AB /* Johnny.swift */; };
+		F3E4CB131D25634F005B30AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB091D25634F005B30AB /* Log.swift */; };
+		F3E4CB141D25634F005B30AB /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB0A1D25634F005B30AB /* Memory.swift */; };
+		F3E4CB181D25640A005B30AB /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = F3E4CB171D25640A005B30AB /* Podfile.lock */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30E6FE15FB67FCAAB5C30AB3 /* Pods-Johnny.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny/Pods-Johnny.debug.xcconfig"; sourceTree = "<group>"; };
+		6CAC55D79516509BE86E3275 /* Pods_Johnny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49D018E6B8069FFE8DD4C87 /* Pods-Johnny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny/Pods-Johnny.release.xcconfig"; sourceTree = "<group>"; };
+		F3E4CAF31D256069005B30AB /* Johnny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Johnny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E4CAF61D256069005B30AB /* Johnny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Johnny.h; sourceTree = "<group>"; };
+		F3E4CAF81D256069005B30AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3E4CAFE1D256192005B30AB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F3E4CB001D25634F005B30AB /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Johnny.swift"; sourceTree = "<group>"; };
+		F3E4CB031D25634F005B30AB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+Johnny.swift"; sourceTree = "<group>"; };
+		F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Johnny.swift"; sourceTree = "<group>"; };
+		F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Johnny.swift"; sourceTree = "<group>"; };
+		F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Johnny.swift"; sourceTree = "<group>"; };
+		F3E4CB081D25634F005B30AB /* Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Johnny.swift; sourceTree = "<group>"; };
+		F3E4CB091D25634F005B30AB /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		F3E4CB0A1D25634F005B30AB /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		F3E4CB171D25640A005B30AB /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3E4CAEF1D256069005B30AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				096271BE16FC848D7025CE8F /* Pods_Johnny.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A3392B25E28FDD02B6C9D56E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30E6FE15FB67FCAAB5C30AB3 /* Pods-Johnny.debug.xcconfig */,
+				B49D018E6B8069FFE8DD4C87 /* Pods-Johnny.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF5C5841A66E6F5BA5102907 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CAC55D79516509BE86E3275 /* Pods_Johnny.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3E4CAE91D256069005B30AB = {
+			isa = PBXGroup;
+			children = (
+				F3E4CAF51D256069005B30AB /* Johnny */,
+				F3E4CAF41D256069005B30AB /* Products */,
+				A3392B25E28FDD02B6C9D56E /* Pods */,
+				BF5C5841A66E6F5BA5102907 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F3E4CAF41D256069005B30AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3E4CAF31D256069005B30AB /* Johnny.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3E4CAF51D256069005B30AB /* Johnny */ = {
+			isa = PBXGroup;
+			children = (
+				F3E4CAF61D256069005B30AB /* Johnny.h */,
+				F3E4CB081D25634F005B30AB /* Johnny.swift */,
+				F3E4CB0A1D25634F005B30AB /* Memory.swift */,
+				F3E4CB001D25634F005B30AB /* Disk.swift */,
+				F3E4CB011D25634F005B30AB /* Extensions */,
+				F3E4CB091D25634F005B30AB /* Log.swift */,
+				F3E4CAF81D256069005B30AB /* Info.plist */,
+				F3E4CAFE1D256192005B30AB /* Podfile */,
+				F3E4CB171D25640A005B30AB /* Podfile.lock */,
+			);
+			path = Johnny;
+			sourceTree = "<group>";
+		};
+		F3E4CB011D25634F005B30AB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */,
+				F3E4CB031D25634F005B30AB /* Extensions.swift */,
+				F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */,
+				F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */,
+				F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */,
+				F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F3E4CAF01D256069005B30AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3E4CAF71D256069005B30AB /* Johnny.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F3E4CAF21D256069005B30AB /* Johnny */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3E4CAFB1D256069005B30AB /* Build configuration list for PBXNativeTarget "Johnny" */;
+			buildPhases = (
+				AF7961C64E23770F9787049B /* Check Pods Manifest.lock */,
+				F3E4CAEE1D256069005B30AB /* Sources */,
+				F3E4CAEF1D256069005B30AB /* Frameworks */,
+				F3E4CAF01D256069005B30AB /* Headers */,
+				F3E4CAF11D256069005B30AB /* Resources */,
+				A35EC085AACC20CF832EC095 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Johnny;
+			productName = Johnny;
+			productReference = F3E4CAF31D256069005B30AB /* Johnny.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3E4CAEA1D256069005B30AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Zoltán Matók";
+				TargetAttributes = {
+					F3E4CAF21D256069005B30AB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F3E4CAED1D256069005B30AB /* Build configuration list for PBXProject "Johnny" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F3E4CAE91D256069005B30AB;
+			productRefGroup = F3E4CAF41D256069005B30AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3E4CAF21D256069005B30AB /* Johnny */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3E4CAF11D256069005B30AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3E4CB181D25640A005B30AB /* Podfile.lock in Resources */,
+				F3E4CAFF1D256192005B30AB /* Podfile in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A35EC085AACC20CF832EC095 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Johnny/Pods-Johnny-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF7961C64E23770F9787049B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3E4CAEE1D256069005B30AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3E4CB0C1D25634F005B30AB /* CGSize+Johnny.swift in Sources */,
+				F3E4CB111D25634F005B30AB /* UIImageView+Johnny.swift in Sources */,
+				F3E4CB131D25634F005B30AB /* Log.swift in Sources */,
+				F3E4CB0F1D25634F005B30AB /* UIButton+Johnny.swift in Sources */,
+				F3E4CB0D1D25634F005B30AB /* Extensions.swift in Sources */,
+				F3E4CB0E1D25634F005B30AB /* NSFileManager+Johnny.swift in Sources */,
+				F3E4CB121D25634F005B30AB /* Johnny.swift in Sources */,
+				F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */,
+				F3E4CB141D25634F005B30AB /* Memory.swift in Sources */,
+				F3E4CB101D25634F005B30AB /* UIImage+Johnny.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F3E4CAF91D256069005B30AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F3E4CAFA1D256069005B30AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F3E4CAFC1D256069005B30AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30E6FE15FB67FCAAB5C30AB3 /* Pods-Johnny.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Johnny/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.Johnny;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3E4CAFD1D256069005B30AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B49D018E6B8069FFE8DD4C87 /* Pods-Johnny.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Johnny/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.Johnny;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3E4CAED1D256069005B30AB /* Build configuration list for PBXProject "Johnny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3E4CAF91D256069005B30AB /* Debug */,
+				F3E4CAFA1D256069005B30AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3E4CAFB1D256069005B30AB /* Build configuration list for PBXNativeTarget "Johnny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3E4CAFC1D256069005B30AB /* Debug */,
+				F3E4CAFD1D256069005B30AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3E4CAEA1D256069005B30AB /* Project object */;
+}
