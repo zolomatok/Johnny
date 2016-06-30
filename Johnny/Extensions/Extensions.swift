@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import UIKit
-import CoreImage
 
 
 public protocol Storable {
@@ -135,38 +133,6 @@ extension NSData : Storable {
     
     public func toData() -> NSData {
         return self
-    }
-}
-
-// See: https://github.com/AFNetworking/AFNetworking/issues/2572#issuecomment-115854482
-private let imgLock = NSLock()
-extension UIImage : Storable {
-    
-    public typealias Result = UIImage
-    
-    public static func fromData(data: NSData) -> Result? {
-        imgLock.lock()
-        let img = UIImage(data: data)
-        imgLock.unlock()
-        return img
-    }
-    
-    public func toData() -> NSData {
-        return UIImageJPEGRepresentation(self, 1.0)!
-    }
-}
-
-
-extension UIColor : Storable {
-    
-    public typealias Result = UIColor
-    
-    public static func fromData(data: NSData) -> Result? {
-        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? UIColor
-    }
-    
-    public func toData() -> NSData {
-        return NSKeyedArchiver.archivedDataWithRootObject(self)
     }
 }
 

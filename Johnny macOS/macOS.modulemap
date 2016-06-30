@@ -1,0 +1,6 @@
+framework module Johnny {
+    umbrella header "Johnny macOS.h"
+    
+    export *
+    module * { export * }
+}

@@ -6,9 +6,11 @@
 //  Copyright © 2016 Zoltán Matók. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Async
-
+  #if UIKIT_COMPATIBLE
+import UIKit
+  #endif
 
 // Used to add T to NSCache
 class Shell : NSObject {
@@ -24,6 +26,11 @@ public class Johnny {
     static let memory = Memory()
     static let disk = Disk()
 
+    init() {
+        #if UIKIT_COMPATIBLE
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Johnny.nuke), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
+        #endif
+    }
     
     // MARK: - In
     /**
@@ -337,7 +344,7 @@ public class Johnny {
     /**
      Nukes the entire cache from memory & disk
      */
-    public class func clearAll() {
+    @objc public class func nuke() {
         memory.removeAllObjects()
         disk.nuke(nil)
     }

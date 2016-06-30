@@ -1,0 +1,6 @@
+framework module Johnny {
+    umbrella header "Johnny tvOS.h"
+    
+    export *
+    module * { export * }
+}

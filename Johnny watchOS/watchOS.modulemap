@@ -1,0 +1,6 @@
+framework module Johnny {
+    umbrella header "Johnny watchOS.h"
+    
+    export *
+    module * { export * }
+}
