@@ -11,7 +11,7 @@ import Foundation
 struct Log {
     
     private static let Tag = "[JOHNNY]"
-    static func log(message: String, _ error: ErrorType) {
+    static func log(_ message: String, _ error: ErrorProtocol) {
         #if DEBUG
             NSLog(Tag + " " + message + ":" + (error as NSError).description)
         #endif

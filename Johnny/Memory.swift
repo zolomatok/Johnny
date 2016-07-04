@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Memory: NSCache {
+class Memory: Cache<AnyObject, AnyObject> {
     
     subscript(key: String) -> AnyObject? {
         
         get {
-            return self.objectForKey(key)
+            return self.object(forKey: key)
         }
         
         set(newValue) {

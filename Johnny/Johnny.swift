@@ -40,7 +40,7 @@ public class Johnny {
      - parameter value: The value to be cached
      - parameter key:   The key for pulling the object from the cache
      */
-    public class func cache<T: Storable>(value: T?, key: String) {
+    public class func cache<T: Storable>(_ value: T?, key: String) {
         
         // Store in memory
         memory[key] = Shell(value: value)
@@ -59,7 +59,7 @@ public class Johnny {
      - parameter array: The array to be cached
      - parameter key:   The key for pulling the object from the cache
      */
-    public class func cache<T: Storable>(array: [T]?, key: String) {
+    public class func cache<T: Storable>(_ array: [T]?, key: String) {
         
         // Store in memory
         memory[key] = Shell(value: array)
@@ -77,7 +77,7 @@ public class Johnny {
      - parameter dictionary: The dictionary to be cached
      - parameter key:        The key for pulling the object from the cache
      */
-    public class func cache<U: StringLiteralConvertible, T: Storable>(dictionary: [U:T]?, key: String) {
+    public class func cache<U: StringLiteralConvertible, T: Storable>(_ dictionary: [U:T]?, key: String) {
         
         // Store in memory
         memory[key] = Shell(value: dictionary)
@@ -95,7 +95,7 @@ public class Johnny {
      - parameter dictionary: The set to be cached
      - parameter key:        The key for pulling the object from the cache
      */
-    public class func cache<T: Storable>(array: Set<T>?, key: String) {
+    public class func cache<T: Storable>(_ array: Set<T>?, key: String) {
         
         // Store in memory
         memory[key] = Shell(value: array)
@@ -117,7 +117,7 @@ public class Johnny {
      
      - returns: The stored object, nil if not found
      */
-    public class func pull<T: Storable>(key: String) -> T? {
+    public class func pull<T: Storable>(_ key: String) -> T? {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? T { return value }
@@ -141,7 +141,7 @@ public class Johnny {
      
      - returns: The stored array, nil if not found
      */
-    public class func pull<T: Storable>(key: String) -> [T]? {
+    public class func pull<T: Storable>(_ key: String) -> [T]? {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? [T] { return value }
@@ -150,7 +150,7 @@ public class Johnny {
         // Check disk
         if let data = disk[key] {
             
-            let dataArray = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [NSData]
+            let dataArray = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? [Data]
             let value = dataArray?.map{ T.fromData($0) as? T}
             if let value = value { memory[key] = Shell(value: value) }
             return value as? [T]
@@ -166,7 +166,7 @@ public class Johnny {
      
      - returns: The stored dictionary, nil if not found
      */
-    public class func pull<T: Storable>(key: String) -> [String: T]? {
+    public class func pull<T: Storable>(_ key: String) -> [String: T]? {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? [String: T] { return value }
@@ -175,7 +175,7 @@ public class Johnny {
         // Check disk
         if let data = disk[key] {
             
-            let dataMap = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: NSData]
+            let dataMap = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? [String: Data]
             let value = dataMap?.map{ T.fromData($0) as? T }
             if let value = value { memory[key] = Shell(value: value) }
             return value as? [String: T]
@@ -191,7 +191,7 @@ public class Johnny {
      
      - returns: The stored set, nil if not found
      */
-    public class func pull<T: Storable>(key: String) -> Set<T>? {
+    public class func pull<T: Storable>(_ key: String) -> Set<T>? {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? Set<T> { return value }
@@ -200,7 +200,7 @@ public class Johnny {
         // Check disk
         if let data = disk[key] {
 
-            let dataSet = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Set<NSData>
+            let dataSet = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? Set<Data>
             let value = dataSet?.map{ T.fromData($0) as! T }
             if let value = value { memory[key] = Shell(value: value) }
             return value
@@ -219,7 +219,7 @@ public class Johnny {
      
      - returns: The stored object, nil if not found
      */
-    public class func pull<T: Storable>(key: String, completion: ((value: T?)->Void)? = nil ) {
+    public class func pull<T: Storable>(_ key: String, completion: ((value: T?)->Void)? = nil ) {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? T {
@@ -250,7 +250,7 @@ public class Johnny {
      
      - returns: The stored array, nil if not found
      */
-    public class func pull<T: Storable>(key: String, completion: ((value: [T]?)->Void)? = nil ) {
+    public class func pull<T: Storable>(_ key: String, completion: ((value: [T]?)->Void)? = nil ) {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? [T] {
@@ -282,7 +282,7 @@ public class Johnny {
      
      - returns: The stored dictionary, nil if not found
      */
-    public class func pull<T: Storable>(key: String, completion: ((value: [String: T]?)->Void)? = nil ) {
+    public class func pull<T: Storable>(_ key: String, completion: ((value: [String: T]?)->Void)? = nil ) {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? [String: T] {
@@ -314,7 +314,7 @@ public class Johnny {
      
      - returns: The stored set, nil if not found
      */
-    public class func pull<T: Storable>(key: String, completion: ((value: Set<T>?)->Void)? = nil ) {
+    public class func pull<T: Storable>(_ key: String, completion: ((value: Set<T>?)->Void)? = nil ) {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? Set<T> {

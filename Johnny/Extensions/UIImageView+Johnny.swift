@@ -11,7 +11,7 @@ import Async
 
 extension UIImageView {
     
-    public func imageWithURL(url: String?, placeholder: UIImage? = nil, completion: ((image: UIImage?)->Void)? = nil) {
+    public func imageWithURL(_ url: String?, placeholder: UIImage? = nil, completion: ((image: UIImage?)->Void)? = nil) {
         
         // Handle nil
         guard let url = url else {
@@ -59,7 +59,7 @@ extension UIImageView {
     }
     
     
-    private func resizeImage(img: UIImage?) -> UIImage? {
+    private func resizeImage(_ img: UIImage?) -> UIImage? {
         
         guard let img = img else { return nil }
         
@@ -67,11 +67,11 @@ extension UIImageView {
         // Get target size
         var targetSize: CGSize
         switch self.contentMode {
-        case .ScaleToFill:
+        case .scaleToFill:
             targetSize = bounds.size
-        case .ScaleAspectFit:
+        case .scaleAspectFit:
             targetSize = img.size.aspectFitSize(bounds.size)
-        case .ScaleAspectFill:
+        case .scaleAspectFill:
             targetSize = img.size.aspectFillSize(bounds.size)
         default:
             return img

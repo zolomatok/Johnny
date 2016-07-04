@@ -12,11 +12,11 @@ extension UIColor : Storable {
     
     public typealias Result = UIColor
     
-    public static func fromData(data: NSData) -> Result? {
-        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? UIColor
+    public static func fromData(_ data: Data) -> Result? {
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as? UIColor
     }
     
-    public func toData() -> NSData {
-        return NSKeyedArchiver.archivedDataWithRootObject(self)
+    public func toData() -> Data {
+        return NSKeyedArchiver.archivedData(withRootObject: self)
     }
 }

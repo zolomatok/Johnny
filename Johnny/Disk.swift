@@ -14,14 +14,14 @@ class Disk {
     private let path: String
     private var size: UInt64 = 0
     private var capacity = UINT64_MAX
-    private lazy var diskQueue = dispatch_queue_create("io.johhny.disk", nil)
+    private lazy var diskQueue = DispatchQueue(label: "io.johhny.disk", attributes: [])
 
     
     // MARK: - Init
     init() {
-        let cachesPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        let cachesPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
         let johhny = "io.johhny"
-        path = (cachesPath as NSString).stringByAppendingPathComponent(johhny)
+        path = (cachesPath as NSString).appendingPathComponent(johhny)
 
         createDirectory()
         
@@ -32,7 +32,7 @@ class Disk {
     
     
     // MARK: - Operations
-    subscript(key: String) -> NSData? {
+    subscript(key: String) -> Data? {
         get { return get(key) }
         set(newValue) {
             Async.customQueue(diskQueue) {
@@ -42,7 +42,7 @@ class Disk {
         }
     }
     
-    subscript(key: String, directory: String) -> NSData? {
+    subscript(key: String, directory: String) -> Data? {
         get { return get(directory+"/"+key) }
         set(newValue) {
             Async.customQueue(diskQueue) {
@@ -54,33 +54,33 @@ class Disk {
     }
     
     
-    private func get(key: String) -> NSData? {
+    private func get(_ key: String) -> Data? {
         let path = getPath(key)
-        let data = try? NSData(contentsOfFile: path, options: NSDataReadingOptions())
+        let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions())
         updateAccessDate(path)
         return data
     }
     
     
-    private func add(key: String, newValue: NSData) {
-        let pastAttributes: NSDictionary? = try? NSFileManager.defaultManager().attributesOfItemAtPath(path)
+    private func add(_ key: String, newValue: Data) {
+        let pastAttributes: NSDictionary? = try? FileManager.default().attributesOfItem(atPath: path)
         do {
-            try newValue.writeToFile(getPath(key), options: NSDataWritingOptions.AtomicWrite)
+            try newValue.write(to: URL(fileURLWithPath: getPath(key)), options: NSData.WritingOptions.atomicWrite)
             if let attributes = pastAttributes {
                 self.substractSize(attributes.fileSize())
             }
-            size += UInt64(newValue.length)
+            size += UInt64(newValue.count)
             controlSize()
         } catch {
             if isNoSuchFileError(error as NSError) { Log.log("Failed to write key \(key)", error) }
         }
     }
     
-    private func remove(key: String) {
+    private func remove(_ key: String) {
         do {
-            let attributes : NSDictionary =  try NSFileManager.defaultManager().attributesOfItemAtPath(path)
+            let attributes : NSDictionary =  try FileManager.default().attributesOfItem(atPath: path)
             let fileSize = attributes.fileSize()
-            try NSFileManager.defaultManager().removeItemAtPath(path)
+            try FileManager.default().removeItem(atPath: path)
             substractSize(fileSize)
         } catch {
             if isNoSuchFileError(error as NSError) { Log.log("File remove error", error) }
@@ -88,7 +88,7 @@ class Disk {
     }
 
     
-    func nuke(completion: (()->Void)?) {
+    func nuke(_ completion: (()->Void)?) {
         Async.customQueue(diskQueue) { 
             let contents = try? NSFileManager.defaultManager().contentsOfDirectoryAtPath(self.path)
             contents?.forEach({ (fileName) in
@@ -104,18 +104,18 @@ class Disk {
     
     
     // MARK: - Maintenance
-    func getPath(key: String) -> String {
+    func getPath(_ key: String) -> String {
         let escapedFilename = [ "\0":"%00", ":":"%3A", "/":"%2F" ]
-            .reduce(key.componentsSeparatedByString("%").joinWithSeparator("%25")) {
-                str, m in str.componentsSeparatedByString(m.0).joinWithSeparator(m.1) }
-        return (path as NSString).stringByAppendingPathComponent(escapedFilename)
+            .reduce(key.components(separatedBy: "%").joined(separator: "%25")) {
+                str, m in str.components(separatedBy: m.0).joined(separator: m.1) }
+        return (path as NSString).appendingPathComponent(escapedFilename)
     }
     
     private func createDirectory() {
         var isDir: ObjCBool = false
-        let exists = NSFileManager.defaultManager().fileExistsAtPath(path, isDirectory: &isDir)
+        let exists = FileManager.default().fileExists(atPath: path, isDirectory: &isDir)
         if !exists || !isDir {
-            try! NSFileManager.defaultManager().createDirectoryAtPath(path, withIntermediateDirectories: false, attributes: nil)
+            try! FileManager.default().createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
         }
     }
     
@@ -123,11 +123,11 @@ class Disk {
         size = 0
 
         do {
-            let contents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(path)
+            let contents = try FileManager.default().contentsOfDirectory(atPath: path)
             for fileName in contents {
-                let p = (path as NSString).stringByAppendingPathComponent(fileName)
+                let p = (path as NSString).appendingPathComponent(fileName)
                 do {
-                    let attributes : NSDictionary = try NSFileManager.defaultManager().attributesOfItemAtPath(p)
+                    let attributes : NSDictionary = try FileManager.default().attributesOfItem(atPath: p)
                     size += attributes.fileSize()
                 } catch {
                     if self.isNoSuchFileError(error as NSError) { Log.log("Failed to read file size of \(path)", error) }
@@ -143,23 +143,23 @@ class Disk {
         
         if size <= capacity { return }
         
-        let fileManager = NSFileManager.defaultManager()
-        fileManager.enumerateContentsOfDirectoryAtPath(path, orderedByProperty: NSURLContentModificationDateKey, ascending: true) { (URL : NSURL, _, inout stop : Bool) -> Void in
+        let fileManager = FileManager.default()
+        fileManager.enumerateContentsOfDirectoryAtPath(path, orderedByProperty: URLResourceKey.contentModificationDateKey, ascending: true) { (URL : Foundation.URL, _, stop : inout Bool) -> Void in
             
             if let p = URL.path {
-                self[(p as NSString).stringByDeletingLastPathComponent] = nil
+                self[(p as NSString).deletingLastPathComponent] = nil
                 stop = self.size <= self.capacity
             }
         }
     }
     
     
-    private func substractSize(s : UInt64) {
+    private func substractSize(_ s : UInt64) {
         size = size >= s ? size-s : 0
     }
 
     
-    private func updateAccessDate(path: String) {
+    private func updateAccessDate(_ path: String) {
         Async.customQueue(diskQueue) {
             let now = NSDate()
             do {
@@ -171,7 +171,7 @@ class Disk {
     }
     
     
-    private func isNoSuchFileError(error : NSError?) -> Bool {
+    private func isNoSuchFileError(_ error : NSError?) -> Bool {
         if let error = error {
             return NSCocoaErrorDomain == error.domain && error.code == NSFileReadNoSuchFileError
         }

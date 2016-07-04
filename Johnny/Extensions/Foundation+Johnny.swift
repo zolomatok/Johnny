@@ -10,16 +10,16 @@ import Foundation
 
 extension CGSize {
     
-    func aspectFillSize(size: CGSize) -> CGSize {
+    func aspectFillSize(_ size: CGSize) -> CGSize {
         let scaleWidth = size.width / self.width
         let scaleHeight = size.height / self.height
         let scale = max(scaleWidth, scaleHeight)
         
-        let resultSize = CGSizeMake(self.width * scale, self.height * scale)
-        return CGSizeMake(ceil(resultSize.width), ceil(resultSize.height))
+        let resultSize = CGSize(width: self.width * scale, height: self.height * scale)
+        return CGSize(width: ceil(resultSize.width), height: ceil(resultSize.height))
     }
     
-    func aspectFitSize(size: CGSize) -> CGSize {
+    func aspectFitSize(_ size: CGSize) -> CGSize {
         let targetAspect = size.width / size.height
         let sourceAspect = self.width / self.height
         var resultSize = size
@@ -30,20 +30,20 @@ extension CGSize {
         else {
             resultSize.height = size.width / sourceAspect
         }
-        return CGSizeMake(ceil(resultSize.width), ceil(resultSize.height))
+        return CGSize(width: ceil(resultSize.width), height: ceil(resultSize.height))
     }
 }
 
 
 extension NSData : Storable {
     
-    public typealias Result = NSData
+    public typealias Result = Data
     
-    public static func fromData(data: NSData) -> Result? {
+    public static func fromData(_ data: Data) -> Result? {
         return data
     }
     
-    public func toData() -> NSData {
+    public func toData() -> Data {
         return self
     }
 }
@@ -51,38 +51,38 @@ extension NSData : Storable {
 
 extension NSDate : Storable {
     
-    public typealias Result = NSDate
+    public typealias Result = Date
     
-    public static func fromData(data: NSData) -> Result? {
-        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? NSDate
+    public static func fromData(_ data: Data) -> Result? {
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as? Date
     }
     
-    public func toData() -> NSData {
-        return NSKeyedArchiver.archivedDataWithRootObject(self)
+    public func toData() -> Data {
+        return NSKeyedArchiver.archivedData(withRootObject: self)
     }
 }
 
 
-extension NSFileManager {
+extension FileManager {
     
-    func enumerateContentsOfDirectoryAtPath(path: String, orderedByProperty property: String, ascending: Bool, usingBlock block: (NSURL, Int, inout Bool) -> Void ) {
+    func enumerateContentsOfDirectoryAtPath(_ path: String, orderedByProperty property: String, ascending: Bool, usingBlock block: (URL, Int, inout Bool) -> Void ) {
         
-        let directoryURL = NSURL(fileURLWithPath: path)
+        let directoryURL = URL(fileURLWithPath: path)
         do {
-            let contents = try self.contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: [property], options: NSDirectoryEnumerationOptions())
-            let sortedContents = contents.sort({(URL1: NSURL, URL2: NSURL) -> Bool in
+            let contents = try self.contentsOfDirectory(at: directoryURL, includingPropertiesForKeys: [property], options: FileManager.DirectoryEnumerationOptions())
+            let sortedContents = contents.sorted(isOrderedBefore: {(URL1: URL, URL2: URL) -> Bool in
                 
                 // Maybe there's a better way to do this. See: http://stackoverflow.com/questions/25502914/comparing-anyobject-in-swift
                 
                 var value1 : AnyObject?
                 do {
-                    try URL1.getResourceValue(&value1, forKey: property);
+                    try (URL1 as NSURL).getResourceValue(&value1, forKey: URLResourceKey(rawValue: property));
                 } catch {
                     return true
                 }
                 var value2 : AnyObject?
                 do {
-                    try URL2.getResourceValue(&value2, forKey: property);
+                    try (URL2 as NSURL).getResourceValue(&value2, forKey: URLResourceKey(rawValue: property));
                 } catch {
                     return false
                 }
@@ -91,7 +91,7 @@ extension NSFileManager {
                     return ascending ? string1 < string2 : string2 < string1
                 }
                 
-                if let date1 = value1 as? NSDate, let date2 = value2 as? NSDate {
+                if let date1 = value1 as? Date, let date2 = value2 as? Date {
                     return ascending ? date1 < date2 : date2 < date1
                 }
                 
@@ -102,7 +102,7 @@ extension NSFileManager {
                 return false
             })
             
-            for (i, v) in sortedContents.enumerate() {
+            for (i, v) in sortedContents.enumerated() {
                 var stop : Bool = false
                 block(v, i, &stop)
                 if stop { break }
@@ -115,10 +115,10 @@ extension NSFileManager {
     
 }
 
-func < (lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.compare(rhs) == NSComparisonResult.OrderedAscending
+func < (lhs: Date, rhs: Date) -> Bool {
+    return lhs.compare(rhs) == ComparisonResult.orderedAscending
 }
 
 func < (lhs: NSNumber, rhs: NSNumber) -> Bool {
-    return lhs.compare(rhs) == NSComparisonResult.OrderedAscending
+    return lhs.compare(rhs) == ComparisonResult.orderedAscending
 }

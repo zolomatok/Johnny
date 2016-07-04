@@ -11,130 +11,158 @@ import Foundation
 
 public protocol Storable {
     associatedtype Result
-    static func fromData(data: NSData) -> Result?
-    func toData() -> NSData
+    static func fromData(_ data: Data) -> Result?
+    func toData() -> Data
 }
 
 
 public protocol ProtocolConsumer {
-    func consume<T: Storable>(value: T)
+    func consume<T: Storable>(_ value: T)
 }
 
 
 extension Int : Storable {
     
-    public static func fromData(data: NSData) -> Int? {
+    public static func fromData(_ data: Data) -> Int? {
         var n = 0
-        data.getBytes(&n, length: sizeof(Int))
+        (data as NSData).getBytes(&n, length: sizeof(Int))
         return n
     }
     
-    public func toData() -> NSData {
+    public func toData() -> Data {
         var n = self
-        return NSData(bytes: &n, length: sizeof(Int))
+        return Data(bytes: UnsafePointer<UInt8>(&n), count: sizeof(Int))
     }
 }
 
 
 extension Int64 : Storable {
     
-    public static func fromData(data: NSData) -> Int64? {
+    public static func fromData(_ data: Data) -> Int64? {
         var n: Int64 = 0
-        data.getBytes(&n, length: sizeof(Int64))
+        (data as NSData).getBytes(&n, length: sizeof(Int64))
         return n
     }
     
-    public func toData() -> NSData {
+    public func toData() -> Data {
         var n = self
-        return NSData(bytes: &n, length: sizeof(Int64))
+        return Data(bytes: UnsafePointer<UInt8>(&n), count: sizeof(Int64))
     }
 }
 
 
 extension UInt : Storable {
     
-    public static func fromData(data: NSData) -> UInt? {
+    public static func fromData(_ data: Data) -> UInt? {
         var n: UInt = 0
-        data.getBytes(&n, length: sizeof(UInt))
+        (data as NSData).getBytes(&n, length: sizeof(UInt))
         return n
     }
     
-    public func toData() -> NSData {
+    public func toData() -> Data {
         var n = self
-        return NSData(bytes: &n, length: sizeof(UInt))
+        return Data(bytes: UnsafePointer<UInt8>(&n), count: sizeof(UInt))
     }
 }
 
 
 extension UInt64 : Storable {
     
-    public static func fromData(data: NSData) -> UInt64? {
+    public static func fromData(_ data: Data) -> UInt64? {
         var n: UInt64 = 0
-        data.getBytes(&n, length: sizeof(UInt64))
+        (data as NSData).getBytes(&n, length: sizeof(UInt64))
         return n
     }
     
-    public func toData() -> NSData {
+    public func toData() -> Data {
         var n = self
-        return NSData(bytes: &n, length: sizeof(UInt64))
+        return Data(bytes: UnsafePointer<UInt8>(&n), count: sizeof(UInt64))
     }
 }
 
 
 extension Float : Storable {
     
-    public static func fromData(data: NSData) -> Float? {
+    public static func fromData(_ data: Data) -> Float? {
         var n: Float = 0
-        data.getBytes(&n, length: sizeof(Float))
+        (data as NSData).getBytes(&n, length: sizeof(Float))
         return n
     }
     
-    public func toData() -> NSData {
+    public func toData() -> Data {
         var n = self
-        return NSData(bytes: &n, length: sizeof(Float))
+        return Data(bytes: UnsafePointer<UInt8>(&n), count: sizeof(Float))
     }
 }
 
 
 extension Double : Storable {
     
-    public static func fromData(data: NSData) -> Double? {
+    public static func fromData(_ data: Data) -> Double? {
         var n: Double = 0
-        data.getBytes(&n, length: sizeof(Double))
+        (data as NSData).getBytes(&n, length: sizeof(Double))
         return n
     }
     
-    public func toData() -> NSData {
+    public func toData() -> Data {
         var n = self
-        return NSData(bytes: &n, length: sizeof(Double))
+        return Data(bytes: UnsafePointer<UInt8>(&n), count: sizeof(Double))
     }
 }
 
 
 extension String : Storable {
     
-    public static func fromData(data: NSData) -> String? {
-        return NSString(data: data, encoding: NSUTF8StringEncoding) as? String
+    public static func fromData(_ data: Data) -> String? {
+        return NSString(data: data, encoding: String.Encoding.utf8.rawValue) as? String
     }
     
-    public func toData() -> NSData {
-        return self.dataUsingEncoding(NSUTF8StringEncoding)!
+    public func toData() -> Data {
+        return self.data(using: String.Encoding.utf8)!
+    }
+}
+
+
+extension Data : Storable {
+    
+    public typealias Result = Data
+    
+    public static func fromData(_ data: Data) -> Result? {
+        return data
+    }
+    
+    public func toData() -> Data {
+        return self
+    }
+}
+
+
+extension Date : Storable {
+    
+    public typealias Result = Date
+    
+    public static func fromData(_ data: Data) -> Result? {
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as? Date
+    }
+    
+    public func toData() -> Data {
+        return NSKeyedArchiver.archivedData(withRootObject: self)
     }
 }
 
 
 extension Array where Element: Storable {
-    func toData() -> NSData! {
+    func toData() -> Data! {
         let dataArray = self.map({ $0.toData() })
-        return NSKeyedArchiver.archivedDataWithRootObject(dataArray)
+        return NSKeyedArchiver.archivedData(withRootObject: dataArray)
     }
 }
 
 
 extension Dictionary where Key: Hashable, Value: Storable {
-    func toData() -> NSData! {
+    func toData() -> Data! {
         let dataDictionary = self.map { [String($0): $1.toData()] }
-        return NSKeyedArchiver.archivedDataWithRootObject(dataDictionary)
+        return NSKeyedArchiver.archivedData(withRootObject: dataDictionary)
     }
 }
 
@@ -146,16 +174,16 @@ extension Dictionary {
         }
     }
     
-    func map<T>(@noescape transform: Value throws -> T) rethrows -> [Key: T] {
+    func map<T>(@noescape _ transform: (Value) throws -> T) rethrows -> [Key: T] {
         return Dictionary<Key, T>(try map { (k, v) in (k, try transform(v)) })
     }
 }
 
 
 extension Set where Element: Storable {
-    func toData() -> NSData! {
+    func toData() -> Data! {
         let dataArray = self.map({ $0.toData() })
-        return NSKeyedArchiver.archivedDataWithRootObject(dataArray)
+        return NSKeyedArchiver.archivedData(withRootObject: dataArray)
     }
 }
 
@@ -167,7 +195,7 @@ extension Set {
         }
     }
     
-    public func map<T>(@noescape transform: (Set.Generator.Element) throws -> T) rethrows -> Set<T> {
+    public func map<T>(@noescape transform: (Set.Iterator.Element) throws -> T) rethrows -> Set<T> {
         return Set<T>(try map(transform))
     }
 }
