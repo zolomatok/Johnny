@@ -24,6 +24,7 @@
 		F359013B1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
 		F359013E1D2A822400868171 /* AppKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013C1D2A820900868171 /* AppKit+Johnny.swift */; };
 		F35901401D2A9C9A00868171 /* WatchKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */; };
+		F359018A1D2AC30600868171 /* Johnny.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F35901891D2AC30600868171 /* Johnny.podspec */; };
 		F3E4CAF71D256069005B30AB /* Johnny.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E4CAF61D256069005B30AB /* Johnny.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB001D25634F005B30AB /* Disk.swift */; };
 		F3E4CB0D1D25634F005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
@@ -77,6 +78,8 @@
 		F359013C1D2A820900868171 /* AppKit+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKit+Johnny.swift"; sourceTree = "<group>"; };
 		F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WatchKit+Johnny.swift"; sourceTree = "<group>"; };
 		F35901881D2AA55400868171 /* johnny-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "johnny-logo.png"; sourceTree = "<group>"; };
+		F35901891D2AC30600868171 /* Johnny.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Johnny.podspec; sourceTree = "<group>"; };
+		F359018B1D2AC51500868171 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		F3E4CAF31D256069005B30AB /* Johnny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Johnny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E4CAF61D256069005B30AB /* Johnny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Johnny.h; sourceTree = "<group>"; };
 		F3E4CAF81D256069005B30AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +166,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F359018C1D2AC51E00868171 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F3E4CAF81D256069005B30AB /* Info.plist */,
+				F359018B1D2AC51500868171 /* README.md */,
+				F3E4CAFE1D256192005B30AB /* Podfile */,
+				F3E4CB171D25640A005B30AB /* Podfile.lock */,
+				F35901891D2AC30600868171 /* Johnny.podspec */,
+				F35901881D2AA55400868171 /* johnny-logo.png */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
 		F3E4CAE91D256069005B30AB = {
 			isa = PBXGroup;
 			children = (
@@ -196,10 +212,7 @@
 				F3E4CB001D25634F005B30AB /* Disk.swift */,
 				F3E4CB011D25634F005B30AB /* Extensions */,
 				F3E4CB091D25634F005B30AB /* Log.swift */,
-				F3E4CAF81D256069005B30AB /* Info.plist */,
-				F3E4CAFE1D256192005B30AB /* Podfile */,
-				F3E4CB171D25640A005B30AB /* Podfile.lock */,
-				F35901881D2AA55400868171 /* johnny-logo.png */,
+				F359018C1D2AC51E00868171 /* Configuration */,
 			);
 			path = Johnny;
 			sourceTree = "<group>";
@@ -419,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F359018A1D2AC30600868171 /* Johnny.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

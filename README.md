@@ -59,4 +59,4 @@ Johnny.pull("4KImage") { (value: UIImage?) in
 I'd like to thank the creators of [Pantry](https://github.com/nickoneill/Pantry) and [Haneke](https://github.com/Haneke/HanekeSwift) as those projects provided much of the inspiration and some code. Johnny was dreamed up to be the best of both worlds.
 
 ## License
-Alamofire is released under the MIT license. See LICENSE for details.
+Johnny is released under the MIT license. See LICENSE for details.
