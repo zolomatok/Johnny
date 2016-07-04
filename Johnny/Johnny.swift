@@ -12,6 +12,7 @@ import Async
 import UIKit
   #endif
 
+
 // Used to add T to NSCache
 class Shell : NSObject {
     let value: Any
@@ -27,7 +28,7 @@ public class Johnny {
     static let disk = Disk()
 
     init() {
-        #if UIKIT_COMPATIBLE
+        #if UIKIT_COMPATIBLE && !WATCHKIT
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Johnny.nuke), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
         #endif
     }

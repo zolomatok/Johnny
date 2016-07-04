@@ -123,34 +123,6 @@ extension String : Storable {
 }
 
 
-extension NSData : Storable {
-   
-    public typealias Result = NSData
-
-    public static func fromData(data: NSData) -> Result? {
-        return data
-    }
-    
-    public func toData() -> NSData {
-        return self
-    }
-}
-
-
-extension NSDate : Storable {
-    
-    public typealias Result = NSDate
-    
-    public static func fromData(data: NSData) -> Result? {
-        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? NSDate
-    }
-    
-    public func toData() -> NSData {
-        return NSKeyedArchiver.archivedDataWithRootObject(self)
-    }
-}
-
-
 extension Array where Element: Storable {
     func toData() -> NSData! {
         let dataArray = self.map({ $0.toData() })

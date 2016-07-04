@@ -1,12 +1,67 @@
 //
-//  NSFileManager+Johnny.swift
+//  Foundation+Johnny.swift
 //  Johnny
 //
-//  Created by Zolo on 6/26/16.
+//  Created by Zolo on 7/4/16.
 //  Copyright © 2016 Zoltán Matók. All rights reserved.
 //
 
 import Foundation
+
+extension CGSize {
+    
+    func aspectFillSize(size: CGSize) -> CGSize {
+        let scaleWidth = size.width / self.width
+        let scaleHeight = size.height / self.height
+        let scale = max(scaleWidth, scaleHeight)
+        
+        let resultSize = CGSizeMake(self.width * scale, self.height * scale)
+        return CGSizeMake(ceil(resultSize.width), ceil(resultSize.height))
+    }
+    
+    func aspectFitSize(size: CGSize) -> CGSize {
+        let targetAspect = size.width / size.height
+        let sourceAspect = self.width / self.height
+        var resultSize = size
+        
+        if (targetAspect > sourceAspect) {
+            resultSize.width = size.height * sourceAspect
+        }
+        else {
+            resultSize.height = size.width / sourceAspect
+        }
+        return CGSizeMake(ceil(resultSize.width), ceil(resultSize.height))
+    }
+}
+
+
+extension NSData : Storable {
+    
+    public typealias Result = NSData
+    
+    public static func fromData(data: NSData) -> Result? {
+        return data
+    }
+    
+    public func toData() -> NSData {
+        return self
+    }
+}
+
+
+extension NSDate : Storable {
+    
+    public typealias Result = NSDate
+    
+    public static func fromData(data: NSData) -> Result? {
+        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? NSDate
+    }
+    
+    public func toData() -> NSData {
+        return NSKeyedArchiver.archivedDataWithRootObject(self)
+    }
+}
+
 
 extension NSFileManager {
     

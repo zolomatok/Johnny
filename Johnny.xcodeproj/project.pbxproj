@@ -11,20 +11,22 @@
 		6895970301632C7C5AE828C2 /* Pods_Johnny_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CC95C4BF394EE374FBB57C /* Pods_Johnny_iOS.framework */; };
 		81A1978F7B05406B881ADB3A /* Pods_Johnny_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0DDA7A81B773C3D0FB8A61 /* Pods_Johnny_tvOS.framework */; };
 		E9F14BEEE4424D5B6C56B3E4 /* Pods_Johnny_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C1544184E955825AB3866 /* Pods_Johnny_watchOS.framework */; };
-		F3036D351D2584A10056BCE4 /* Extension-UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3036D331D2584500056BCE4 /* Extension-UIImage.swift */; };
 		F3036D361D2584A80056BCE4 /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
 		F3036D371D2584B00056BCE4 /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
 		F3036D381D2584C30056BCE4 /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
 		F3036D391D2584CA0056BCE4 /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
-		F3036D3B1D2584D10056BCE4 /* Extension-UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3036D331D2584500056BCE4 /* Extension-UIImage.swift */; };
-		F3382FB91D2594D3009C2110 /* Extension-UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* Extension-UIColor.swift */; };
-		F3382FBA1D2594D8009C2110 /* Extension-UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* Extension-UIColor.swift */; };
-		F3382FBB1D2594D9009C2110 /* Extension-UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* Extension-UIColor.swift */; };
+		F3382FB91D2594D3009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
+		F3382FBA1D2594D8009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
+		F3382FBB1D2594D9009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
+		F35901381D2A7DEC00868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
+		F35901391D2A7DF100868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
+		F359013A1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
+		F359013B1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
+		F359013E1D2A822400868171 /* AppKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013C1D2A820900868171 /* AppKit+Johnny.swift */; };
+		F35901401D2A9C9A00868171 /* WatchKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */; };
 		F3E4CAF71D256069005B30AB /* Johnny.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E4CAF61D256069005B30AB /* Johnny.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB001D25634F005B30AB /* Disk.swift */; };
-		F3E4CB0C1D25634F005B30AB /* CGSize+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */; };
-		F3E4CB0D1D25634F005B30AB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Extensions.swift */; };
-		F3E4CB0E1D25634F005B30AB /* NSFileManager+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */; };
+		F3E4CB0D1D25634F005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
 		F3E4CB101D25634F005B30AB /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
 		F3E4CB111D25634F005B30AB /* UIImageView+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */; };
 		F3E4CB121D25634F005B30AB /* Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB081D25634F005B30AB /* Johnny.swift */; };
@@ -45,16 +47,10 @@
 		F3E4CB5C1D257554005B30AB /* Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB081D25634F005B30AB /* Johnny.swift */; };
 		F3E4CB5D1D257554005B30AB /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB0A1D25634F005B30AB /* Memory.swift */; };
 		F3E4CB5E1D257554005B30AB /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB001D25634F005B30AB /* Disk.swift */; };
-		F3E4CB5F1D25755D005B30AB /* CGSize+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */; };
-		F3E4CB601D25755D005B30AB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Extensions.swift */; };
-		F3E4CB611D25755D005B30AB /* NSFileManager+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */; };
-		F3E4CB651D25755E005B30AB /* CGSize+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */; };
-		F3E4CB661D25755E005B30AB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Extensions.swift */; };
-		F3E4CB671D25755E005B30AB /* NSFileManager+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */; };
+		F3E4CB601D25755D005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
+		F3E4CB661D25755E005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
 		F3E4CB6A1D25755E005B30AB /* UIImageView+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */; };
-		F3E4CB6B1D25755E005B30AB /* CGSize+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */; };
-		F3E4CB6C1D25755E005B30AB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Extensions.swift */; };
-		F3E4CB6D1D25755E005B30AB /* NSFileManager+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */; };
+		F3E4CB6C1D25755E005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
 		F3E4CB711D25756A005B30AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB091D25634F005B30AB /* Log.swift */; };
 		F3E4CB721D25756B005B30AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB091D25634F005B30AB /* Log.swift */; };
 		F3E4CB731D25756B005B30AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB091D25634F005B30AB /* Log.swift */; };
@@ -74,18 +70,18 @@
 		BE8C1544184E955825AB3866 /* Pods_Johnny_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92C9C95885D262CEBDA5A29 /* Pods-Johnny tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny tvOS/Pods-Johnny tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		F3036D321D257FC50056BCE4 /* macOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = macOS.modulemap; sourceTree = "<group>"; };
-		F3036D331D2584500056BCE4 /* Extension-UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-UIImage.swift"; sourceTree = "<group>"; };
 		F33542F91D258A3D00E3026F /* tvOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = tvOS.modulemap; sourceTree = "<group>"; };
 		F3382FB71D259384009C2110 /* watchOS.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = watchOS.modulemap; sourceTree = "<group>"; };
-		F3382FB81D2594D3009C2110 /* Extension-UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension-UIColor.swift"; sourceTree = "<group>"; };
+		F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Johnny.swift"; sourceTree = "<group>"; };
+		F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Johnny.swift"; sourceTree = "<group>"; };
+		F359013C1D2A820900868171 /* AppKit+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKit+Johnny.swift"; sourceTree = "<group>"; };
+		F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WatchKit+Johnny.swift"; sourceTree = "<group>"; };
 		F3E4CAF31D256069005B30AB /* Johnny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Johnny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E4CAF61D256069005B30AB /* Johnny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Johnny.h; sourceTree = "<group>"; };
 		F3E4CAF81D256069005B30AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E4CAFE1D256192005B30AB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F3E4CB001D25634F005B30AB /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
-		F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Johnny.swift"; sourceTree = "<group>"; };
-		F3E4CB031D25634F005B30AB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+Johnny.swift"; sourceTree = "<group>"; };
+		F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stdlib+Johnny.swift"; sourceTree = "<group>"; };
 		F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Johnny.swift"; sourceTree = "<group>"; };
 		F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Johnny.swift"; sourceTree = "<group>"; };
 		F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Johnny.swift"; sourceTree = "<group>"; };
@@ -209,14 +205,14 @@
 		F3E4CB011D25634F005B30AB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F3E4CB021D25634F005B30AB /* CGSize+Johnny.swift */,
-				F3E4CB031D25634F005B30AB /* Extensions.swift */,
-				F3036D331D2584500056BCE4 /* Extension-UIImage.swift */,
-				F3382FB81D2594D3009C2110 /* Extension-UIColor.swift */,
-				F3E4CB041D25634F005B30AB /* NSFileManager+Johnny.swift */,
+				F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */,
+				F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */,
 				F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */,
+				F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */,
 				F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */,
 				F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */,
+				F359013C1D2A820900868171 /* AppKit+Johnny.swift */,
+				F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -575,15 +571,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E4CB0C1D25634F005B30AB /* CGSize+Johnny.swift in Sources */,
 				F3E4CB111D25634F005B30AB /* UIImageView+Johnny.swift in Sources */,
+				F35901381D2A7DEC00868171 /* Foundation+Johnny.swift in Sources */,
 				F3E4CB131D25634F005B30AB /* Log.swift in Sources */,
 				F3036D361D2584A80056BCE4 /* UIButton+Johnny.swift in Sources */,
-				F3E4CB0D1D25634F005B30AB /* Extensions.swift in Sources */,
-				F3382FB91D2594D3009C2110 /* Extension-UIColor.swift in Sources */,
-				F3E4CB0E1D25634F005B30AB /* NSFileManager+Johnny.swift in Sources */,
+				F35901401D2A9C9A00868171 /* WatchKit+Johnny.swift in Sources */,
+				F3E4CB0D1D25634F005B30AB /* Stdlib+Johnny.swift in Sources */,
+				F3382FB91D2594D3009C2110 /* UIColor+Johnny.swift in Sources */,
 				F3E4CB121D25634F005B30AB /* Johnny.swift in Sources */,
-				F3036D351D2584A10056BCE4 /* Extension-UIImage.swift in Sources */,
 				F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */,
 				F3E4CB141D25634F005B30AB /* Memory.swift in Sources */,
 				F3E4CB101D25634F005B30AB /* UIImage+Johnny.swift in Sources */,
@@ -594,10 +589,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E4CB611D25755D005B30AB /* NSFileManager+Johnny.swift in Sources */,
 				F3E4CB711D25756A005B30AB /* Log.swift in Sources */,
-				F3E4CB601D25755D005B30AB /* Extensions.swift in Sources */,
-				F3E4CB5F1D25755D005B30AB /* CGSize+Johnny.swift in Sources */,
+				F35901391D2A7DF100868171 /* Foundation+Johnny.swift in Sources */,
+				F359013E1D2A822400868171 /* AppKit+Johnny.swift in Sources */,
+				F3E4CB601D25755D005B30AB /* Stdlib+Johnny.swift in Sources */,
 				F3E4CB581D257552005B30AB /* Disk.swift in Sources */,
 				F3E4CB571D257552005B30AB /* Memory.swift in Sources */,
 				F3E4CB561D257552005B30AB /* Johnny.swift in Sources */,
@@ -608,15 +603,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E4CB671D25755E005B30AB /* NSFileManager+Johnny.swift in Sources */,
 				F3036D391D2584CA0056BCE4 /* UIButton+Johnny.swift in Sources */,
+				F359013A1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */,
 				F3E4CB721D25756B005B30AB /* Log.swift in Sources */,
-				F3E4CB661D25755E005B30AB /* Extensions.swift in Sources */,
-				F3E4CB651D25755E005B30AB /* CGSize+Johnny.swift in Sources */,
-				F3382FBA1D2594D8009C2110 /* Extension-UIColor.swift in Sources */,
+				F3E4CB661D25755E005B30AB /* Stdlib+Johnny.swift in Sources */,
+				F3382FBA1D2594D8009C2110 /* UIColor+Johnny.swift in Sources */,
 				F3E4CB5B1D257553005B30AB /* Disk.swift in Sources */,
 				F3036D381D2584C30056BCE4 /* UIImage+Johnny.swift in Sources */,
-				F3036D3B1D2584D10056BCE4 /* Extension-UIImage.swift in Sources */,
 				F3E4CB5A1D257553005B30AB /* Memory.swift in Sources */,
 				F3E4CB591D257553005B30AB /* Johnny.swift in Sources */,
 				F3E4CB6A1D25755E005B30AB /* UIImageView+Johnny.swift in Sources */,
@@ -627,12 +620,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E4CB6D1D25755E005B30AB /* NSFileManager+Johnny.swift in Sources */,
+				F359013B1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */,
 				F3E4CB731D25756B005B30AB /* Log.swift in Sources */,
-				F3E4CB6C1D25755E005B30AB /* Extensions.swift in Sources */,
-				F3E4CB6B1D25755E005B30AB /* CGSize+Johnny.swift in Sources */,
+				F3E4CB6C1D25755E005B30AB /* Stdlib+Johnny.swift in Sources */,
 				F3E4CB5E1D257554005B30AB /* Disk.swift in Sources */,
-				F3382FBB1D2594D9009C2110 /* Extension-UIColor.swift in Sources */,
+				F3382FBB1D2594D9009C2110 /* UIColor+Johnny.swift in Sources */,
 				F3036D371D2584B00056BCE4 /* UIImage+Johnny.swift in Sources */,
 				F3E4CB5D1D257554005B30AB /* Memory.swift in Sources */,
 				F3E4CB5C1D257554005B30AB /* Johnny.swift in Sources */,
@@ -875,7 +867,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "$(SRCROOT)/Johnny watchOS/watchOS.modulemap";
-				OTHER_SWIFT_FLAGS = "-DUIKIT_COMPATIBLE $(inherited)";
+				OTHER_SWIFT_FLAGS = "-DUIKIT_COMPATIBLE $(inherited) -DWATCHKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "ZoltanMatok.Johnny-watchOS";
 				PRODUCT_NAME = Johnny;
 				SDKROOT = watchos;
@@ -898,7 +890,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "$(SRCROOT)/Johnny watchOS/watchOS.modulemap";
-				OTHER_SWIFT_FLAGS = "-DUIKIT_COMPATIBLE $(inherited)";
+				OTHER_SWIFT_FLAGS = "-DUIKIT_COMPATIBLE $(inherited) -DWATCHKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "ZoltanMatok.Johnny-watchOS";
 				PRODUCT_NAME = Johnny;
 				SDKROOT = watchos;
