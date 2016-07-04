@@ -73,6 +73,7 @@
 		F33542F91D258A3D00E3026F /* tvOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = tvOS.modulemap; sourceTree = "<group>"; };
 		F3382FB71D259384009C2110 /* watchOS.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = watchOS.modulemap; sourceTree = "<group>"; };
 		F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Johnny.swift"; sourceTree = "<group>"; };
+		F346D6C81D2ACC13001F2F6A /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = SOURCE_ROOT; };
 		F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Johnny.swift"; sourceTree = "<group>"; };
 		F359013C1D2A820900868171 /* AppKit+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKit+Johnny.swift"; sourceTree = "<group>"; };
 		F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WatchKit+Johnny.swift"; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		F3E4CB081D25634F005B30AB /* Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Johnny.swift; sourceTree = "<group>"; };
 		F3E4CB091D25634F005B30AB /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		F3E4CB0A1D25634F005B30AB /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
-		F3E4CB171D25640A005B30AB /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = SOURCE_ROOT; };
 		F3E4CB311D2572FC005B30AB /* Johnny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Johnny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E4CB331D2572FC005B30AB /* Johnny macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Johnny macOS.h"; sourceTree = "<group>"; };
 		F3E4CB351D2572FC005B30AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 				F359018B1D2AC51500868171 /* README.md */,
 				F359018D1D2AC65800868171 /* Johnny.podspec */,
 				F3E4CAFE1D256192005B30AB /* Podfile */,
-				F3E4CB171D25640A005B30AB /* Podfile.lock */,
+				F346D6C81D2ACC13001F2F6A /* Podfile.lock */,
 				F35901881D2AA55400868171 /* johnny-logo.png */,
 			);
 			name = Configuration;
