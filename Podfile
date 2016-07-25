@@ -1,9 +1,5 @@
 use_frameworks!
 
-#begin
-#UNTIL ASYNC PR #88 IS RESOLVED, ASYNC CANNOT BE ADDED AS A POD DEPENDENCY
-#https://github.com/duemunk/Async/pull/88
- 
 target 'Johnny iOS' do
     platform :ios, '8.0'
     pod 'AsyncSwift', :git => 'https://github.com/zolomatok/Async'
@@ -23,4 +19,3 @@ target 'Johnny watchOS' do
     platform :watchos
     pod 'AsyncSwift', :git => 'https://github.com/zolomatok/Async'
 end
-#end
