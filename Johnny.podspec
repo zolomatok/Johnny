@@ -6,15 +6,19 @@ Pod::Spec.new do |s|
     s.license     = { :type => "MIT" }
     s.authors     = { "Zoltán Matók" => "bellamycpt@gmail.com" }
 
+    s.source   = { :git => "https://github.com/zolomatok/Johnny.git", :tag => "1.0"}
+    s.requires_arc = true
+    s.module_name = 'Johnny'
+
     s.osx.deployment_target = "10.10"
     s.ios.deployment_target = "8.0"
     s.tvos.deployment_target = "9.0"
     s.watchos.deployment_target = "2.0"
 
-    s.source   = { :git => "https://github.com/zolomatok/Johnny", :tag => "1.0"}
-    s.source_files = "Johnny/**/*.swift"
-    s.requires_arc = true
-    s.module_name = 'Johnny'
+    s.osx.source_files = 'Johnny/*.swift', 'Johnny/Extensions/common/*.swift', 'Johnny/Extensions/macOS/*.swift'
+    s.ios.source_files = 'Johnny/*.swift', 'Johnny/Extensions/*.swift', 'Johnny/Extensions/common/*.swift'
+    s.tvos.source_files = 'Johnny/*.swift', 'Johnny/Extensions/*.swift', 'Johnny/Extensions/common/*.swift'
+    s.watchos.source_files = 'Johnny/*.swift', 'Johnny/Extensions/common/*.swift', 'Johnny/Extensions/UIColor.swift', 'Johnny/Extensions/UIImage.swift'
 
     s.osx.frameworks = 'AppKit', 'Foundation'
     s.ios.frameworks = 'UIKit', 'Foundation'

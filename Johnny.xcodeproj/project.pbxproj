@@ -178,6 +178,31 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
+		F3D0533D1D47E26A00D9AA84 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */,
+				F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		F3D0533F1D47E26A00D9AA84 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F359013C1D2A820900868171 /* AppKit+Johnny.swift */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		F3D053411D47E26A00D9AA84 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */,
+			);
+			path = watchOS;
+			sourceTree = "<group>";
+		};
 		F3E4CAE91D256069005B30AB = {
 			isa = PBXGroup;
 			children = (
@@ -219,14 +244,13 @@
 		F3E4CB011D25634F005B30AB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */,
-				F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */,
+				F3D0533D1D47E26A00D9AA84 /* common */,
+				F3D0533F1D47E26A00D9AA84 /* macOS */,
+				F3D053411D47E26A00D9AA84 /* watchOS */,
 				F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */,
 				F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */,
 				F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */,
 				F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */,
-				F359013C1D2A820900868171 /* AppKit+Johnny.swift */,
-				F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
