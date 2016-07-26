@@ -151,9 +151,9 @@ public class Johnny {
         if let data = disk[key] {
             
             let dataArray = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? [Data]
-            let value = dataArray?.map{ T.fromData($0) as? T}
+            let value = dataArray?.map{ T.fromData($0) as! T}
             if let value = value { memory[key] = Shell(value: value) }
-            return value as? [T]
+            return value
         }
         
         return nil
@@ -176,9 +176,9 @@ public class Johnny {
         if let data = disk[key] {
             
             let dataMap = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? [String: Data]
-            let value = dataMap?.map{ T.fromData($0) as? T }
+            let value = dataMap?.map{ T.fromData($0) as! T }
             if let value = value { memory[key] = Shell(value: value) }
-            return value as? [String: T]
+            return value
         }
         
         return nil
