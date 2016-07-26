@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				F3E4CAF51D256069005B30AB /* Johnny */,
-				F3E4CB321D2572FC005B30AB /* Johnny-macOS */,
+				F3E4CB321D2572FC005B30AB /* Johnny macOS */,
 				F3E4CB3F1D2573CD005B30AB /* Johnny tvOS */,
 				F3E4CB4C1D2573FF005B30AB /* Johnny watchOS */,
 				F3E4CAF41D256069005B30AB /* Products */,
@@ -255,14 +255,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F3E4CB321D2572FC005B30AB /* Johnny-macOS */ = {
+		F3E4CB321D2572FC005B30AB /* Johnny macOS */ = {
 			isa = PBXGroup;
 			children = (
 				F3E4CB331D2572FC005B30AB /* Johnny macOS.h */,
 				F3E4CB351D2572FC005B30AB /* Info.plist */,
 				F3036D321D257FC50056BCE4 /* macOS.modulemap */,
 			);
-			name = "Johnny-macOS";
 			path = "Johnny macOS";
 			sourceTree = "<group>";
 		};
