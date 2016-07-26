@@ -52,8 +52,7 @@ Johnny.pull("4KImage") { (value: UIImage?) in
 - Swift 2.0 (there's also a swift3 branch)
 
 ## Install
-### Cocoapods
-`pod 'Johnny'`
+**Cocoapods support coming soon**
 
 ## Attribution
 I'd like to thank the creators of [Pantry](https://github.com/nickoneill/Pantry) and [Haneke](https://github.com/Haneke/HanekeSwift) as those projects provided much of the inspiration and some code. Johnny was dreamed up to be the best of both worlds.

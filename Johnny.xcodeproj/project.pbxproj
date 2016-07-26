@@ -14,7 +14,8 @@
 		F3036D361D2584A80056BCE4 /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
 		F3036D371D2584B00056BCE4 /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
 		F3036D381D2584C30056BCE4 /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
-		F3036D391D2584CA0056BCE4 /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
+		F30F64911D46A27500EDD75F /* WatchKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */; };
+		F30F64921D46A39A00EDD75F /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
 		F3382FB91D2594D3009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
 		F3382FBA1D2594D8009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
 		F3382FBB1D2594D9009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
@@ -23,7 +24,6 @@
 		F359013A1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
 		F359013B1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
 		F359013E1D2A822400868171 /* AppKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013C1D2A820900868171 /* AppKit+Johnny.swift */; };
-		F35901401D2A9C9A00868171 /* WatchKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */; };
 		F3E4CAF71D256069005B30AB /* Johnny.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E4CAF61D256069005B30AB /* Johnny.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB001D25634F005B30AB /* Disk.swift */; };
 		F3E4CB0D1D25634F005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
@@ -590,7 +590,6 @@
 				F35901381D2A7DEC00868171 /* Foundation+Johnny.swift in Sources */,
 				F3E4CB131D25634F005B30AB /* Log.swift in Sources */,
 				F3036D361D2584A80056BCE4 /* UIButton+Johnny.swift in Sources */,
-				F35901401D2A9C9A00868171 /* WatchKit+Johnny.swift in Sources */,
 				F3E4CB0D1D25634F005B30AB /* Stdlib+Johnny.swift in Sources */,
 				F3382FB91D2594D3009C2110 /* UIColor+Johnny.swift in Sources */,
 				F3E4CB121D25634F005B30AB /* Johnny.swift in Sources */,
@@ -618,8 +617,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3036D391D2584CA0056BCE4 /* UIButton+Johnny.swift in Sources */,
 				F359013A1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */,
+				F30F64921D46A39A00EDD75F /* UIButton+Johnny.swift in Sources */,
 				F3E4CB721D25756B005B30AB /* Log.swift in Sources */,
 				F3E4CB661D25755E005B30AB /* Stdlib+Johnny.swift in Sources */,
 				F3382FBA1D2594D8009C2110 /* UIColor+Johnny.swift in Sources */,
@@ -638,6 +637,7 @@
 				F359013B1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */,
 				F3E4CB731D25756B005B30AB /* Log.swift in Sources */,
 				F3E4CB6C1D25755E005B30AB /* Stdlib+Johnny.swift in Sources */,
+				F30F64911D46A27500EDD75F /* WatchKit+Johnny.swift in Sources */,
 				F3E4CB5E1D257554005B30AB /* Disk.swift in Sources */,
 				F3382FBB1D2594D9009C2110 /* UIColor+Johnny.swift in Sources */,
 				F3036D371D2584B00056BCE4 /* UIImage+Johnny.swift in Sources */,

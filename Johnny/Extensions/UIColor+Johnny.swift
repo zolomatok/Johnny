@@ -6,7 +6,7 @@
 //  Copyright © 2016 Zoltán Matók. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIColor : Storable {
     
