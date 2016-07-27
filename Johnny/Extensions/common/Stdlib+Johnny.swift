@@ -159,16 +159,3 @@ extension Set where Element: Storable {
     }
 }
 
-extension Set {
-    init(_ array: [Element]) {
-        self.init()
-        for v in array {
-            self.insert(v)
-        }
-    }
-    
-    public func map<T>(@noescape transform: (Set.Generator.Element) throws -> T) rethrows -> Set<T> {
-        return Set<T>(try map(transform))
-    }
-}
-
