@@ -39,7 +39,7 @@ let date: NSDate? = Johnny.pull("FirstStart")
 
 If you know you are retrieving a large object (> 1.5 MB):
 
-```
+```swift
 Johnny.pull("4KImage") { (value: UIImage?) in
      
 }
@@ -51,7 +51,7 @@ Johnny.pull("4KImage") { (value: UIImage?) in
 
 *Note, that since the protocol uses a static constructor function instead of an initializer, you can extend any class without errors, even if you don't have access to its source (like Standard library classes)*
 
-```
+```swift
 public protocol Storable {
     associatedtype Result
     static func fromData(data: NSData) -> Result?
@@ -63,7 +63,7 @@ public protocol Storable {
 
 You can cache any collection of items conforming to the Storable protocol (most Stdlib data types already do)
 
-```
+```swift
 let array: [String] = ["Folsom", "Prison", "Blues"]
 let stringSet: Set<String> = ["I've", "been", "everywhere"]
 // In case of dictionaries, the value must explicitly conform to Storable (so [String: AnyObject] does not work, while [String: Double] does)
@@ -80,7 +80,7 @@ Due to current Swift limitations, since the Storable protocol has an `associated
 `class User: Storable` will not work.
 
 
-```
+```swift
 class User {
 
     enum Badassery: String { case Total }
@@ -114,7 +114,7 @@ func toData() -> NSData {
 **Using it with Johnny:**
 
 
-```
+```swift
 let johnny: User = User()
 Johnny.cache(johnny, key: "John")
 let cachedJohn: User = Johnny.pull("John")
