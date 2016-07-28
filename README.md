@@ -1,4 +1,10 @@
-![Alt text](/Johnny/johnny-logo.png?raw=true)
+![Logo](/Johnny/johnny-logo.png?raw=true)
+
+![pod](https://cdn.rawgit.com/zolomatok/Johnny/master/pod.svg)
+![language](https://cdn.rawgit.com/zolomatok/Johnny/master/language.svg)
+![platform](https://cdn.rawgit.com/zolomatok/Johnny/master/platform.svg)
+![license](https://cdn.rawgit.com/zolomatok/Johnny/master/license.svg)
+
 Johnny is a caching library written in Swift.
 
 ## Features
@@ -39,7 +45,7 @@ let date: NSDate? = Johnny.pull("FirstStart")
 
 If you know you are retrieving a large object (> 1.5 MB):
 
-```
+```swift
 Johnny.pull("4KImage") { (value: UIImage?) in
      
 }
@@ -51,7 +57,7 @@ Johnny.pull("4KImage") { (value: UIImage?) in
 
 *Note, that since the protocol uses a static constructor function instead of an initializer, you can extend any class without errors, even if you don't have access to its source (like Standard library classes)*
 
-```
+```swift
 public protocol Storable {
     associatedtype Result
     static func fromData(data: NSData) -> Result?
@@ -63,15 +69,15 @@ public protocol Storable {
 
 You can cache any collection of items conforming to the Storable protocol (most Stdlib data types already do)
 
-```
+```swift
 let array: [String] = ["Folsom", "Prison", "Blues"]
 let stringSet: Set<String> = ["I've", "been", "everywhere"]
 // In case of dictionaries, the value must explicitly conform to Storable (so [String: AnyObject] does not work, while [String: Double] does)
 let dictionary: [String: String] = ["first": "Solitary", "second": "man"]
 
-Johnny.cache(stringArray, key: "folsom")
+Johnny.cache(array, key: "folsom")
 Johnny.cache(stringSet, key: "everywhere")
-Johnny.cache(stringMap, key: "solitary")
+Johnny.cache(dictionary, key: "solitary")
 ```
 
 ### Custom types ###
@@ -80,7 +86,7 @@ Due to current Swift limitations, since the Storable protocol has an `associated
 `class User: Storable` will not work.
 
 
-```
+```swift
 class User {
 
     enum Badassery: String { case Total }
@@ -114,7 +120,7 @@ func toData() -> NSData {
 **Using it with Johnny:**
 
 
-```
+```swift
 let johnny: User = User()
 Johnny.cache(johnny, key: "John")
 let cachedJohn: User = Johnny.pull("John")
@@ -127,13 +133,15 @@ let cachedJohn: User = Johnny.pull("John")
 - macOS 10.10+
 - tvOS 9.0+
 - watchOS 2.0+
-- Swift 2.0 (there's also a swift3 branch)
+- Swift 2.0+ (there's also a swift3 branch)
 
 ## Install
 
 **CocoaPods**
 
-`pod Johnny`
+```swift
+pod Johnny
+```
 
 ## Attribution
 I'd like to thank the creators of [Pantry](https://github.com/nickoneill/Pantry) and [Haneke](https://github.com/Haneke/HanekeSwift) as those projects provided much of the inspiration and some code. Johnny was dreamed up to be the best of both worlds.

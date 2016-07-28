@@ -90,6 +90,12 @@
 		D92C9C95885D262CEBDA5A29 /* Pods-Johnny tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny tvOS/Pods-Johnny tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		F3036D321D257FC50056BCE4 /* macOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = macOS.modulemap; sourceTree = "<group>"; };
 		F319959C1D48D60200429F83 /* JohnnyDiskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnnyDiskTests.swift; sourceTree = "<group>"; };
+		F31E2FE21D49F10B009EE3F1 /* johhny-logo.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = "johhny-logo.sketch"; sourceTree = SOURCE_ROOT; };
+		F31E2FE41D4A1016009EE3F1 /* tags.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = tags.sketch; sourceTree = SOURCE_ROOT; };
+		F31E2FE51D4A1061009EE3F1 /* language.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = language.svg; sourceTree = SOURCE_ROOT; };
+		F31E2FE61D4A1061009EE3F1 /* license.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = license.svg; sourceTree = SOURCE_ROOT; };
+		F31E2FE71D4A1061009EE3F1 /* platform.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = platform.svg; sourceTree = SOURCE_ROOT; };
+		F31E2FE81D4A1061009EE3F1 /* pod.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = pod.svg; sourceTree = SOURCE_ROOT; };
 		F33542F91D258A3D00E3026F /* tvOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = tvOS.modulemap; sourceTree = "<group>"; };
 		F3382FB71D259384009C2110 /* watchOS.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = watchOS.modulemap; sourceTree = "<group>"; };
 		F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Johnny.swift"; sourceTree = "<group>"; };
@@ -209,6 +215,12 @@
 				F3E4CAFE1D256192005B30AB /* Podfile */,
 				F346D6C81D2ACC13001F2F6A /* Podfile.lock */,
 				F35901881D2AA55400868171 /* johnny-logo.png */,
+				F31E2FE21D49F10B009EE3F1 /* johhny-logo.sketch */,
+				F31E2FE41D4A1016009EE3F1 /* tags.sketch */,
+				F31E2FE51D4A1061009EE3F1 /* language.svg */,
+				F31E2FE61D4A1061009EE3F1 /* license.svg */,
+				F31E2FE71D4A1061009EE3F1 /* platform.svg */,
+				F31E2FE81D4A1061009EE3F1 /* pod.svg */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -1091,7 +1103,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -1116,7 +1128,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};

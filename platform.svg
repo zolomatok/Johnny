@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="342px" height="20px" viewBox="0 0 342 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>platform</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="342" height="20" rx="3"></rect>
+        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#B05656" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="platform">
+            <g id="Group">
+                <g id="Clipped">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Rectangle-path"></g>
+                    <g id="Group" mask="url(#mask-2)">
+                        <polygon id="Shape" fill="#555555" points="0 0 57 0 57 20 0 20"></polygon>
+                        <polygon id="Shape" fill="#A754D9" points="57 0 342 0 342 20 57 20"></polygon>
+                        <polygon id="Shape" fill="url(#linearGradient-3)" points="0 0 342 0 342 20 0 20"></polygon>
+                    </g>
+                </g>
+                <g transform="translate(5.000000, 3.000000)" font-family="Verdana" font-size="11" font-weight="normal">
+                    <text id="platform" fill-opacity="0.3" fill="#010101">
+                        <tspan x="0.5" y="12">platform</tspan>
+                    </text>
+                    <text id="platform" fill="#FFFFFF">
+                        <tspan x="0.5" y="11">platform</tspan>
+                    </text>
+                    <text id="iOS-8.0-|-macOS-10.1" fill-opacity="0.3" fill="#010101">
+                        <tspan x="57.5" y="12">iOS 8.0 | macOS 10.10 | tvOS 9.0 | watchOS 2.0</tspan>
+                    </text>
+                    <text id="iOS-8.0-|-macOS-10.1" fill="#FFFFFF">
+                        <tspan x="57.5" y="11">iOS 8.0 | macOS 10.10 | tvOS 9.0 | watchOS 2.0</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

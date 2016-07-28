@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name        = "Johnny"
     s.version     = "1.0"
-    s.summary     = "Elegant Caching in Swift"
+    s.summary     = "Melodic Caching in Swift"
     s.homepage    = "https://github.com/zolomatok/Johnny"
     s.license     = { :type => "MIT" }
     s.authors     = { "Zoltán Matók" => "bellamycpt@gmail.com" }
