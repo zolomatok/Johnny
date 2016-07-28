@@ -98,11 +98,11 @@ public class Johnny {
     public class func cache<T: Storable>(_ array: Set<T>?, key: String) {
         
         // Store in memory
-        memory[key] = Shell(value: array)
+        memory[key] = Shell(value: set)
         
         // Store in disk
         Async.background {
-            let data = array?.toData()
+            let data = set?.toData()
             disk[key] = data
         }
     }
@@ -203,6 +203,7 @@ public class Johnny {
             let dataSet = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? Set<Data>
             let value = dataSet?.map{ T.fromData($0) as! T }
             if let value = value { memory[key] = Shell(value: value) }
+            
             return value
         }
         
@@ -329,7 +330,10 @@ public class Johnny {
             let data = disk[key]
             if let data = data {
                 let dataSet = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Set<NSData>
-                value = dataSet?.map{ T.fromData($0) as! T }
+                let array = dataSet?.map{ T.fromData($0) as! T }
+                if let array = array {
+                    value = Set(array)
+                }
             }
         }.main {
             guard let value = value else { completion?(value: nil); return }

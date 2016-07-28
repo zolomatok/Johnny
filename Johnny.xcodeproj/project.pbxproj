@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		56C0F2FA341593DFAD05D1BF /* Pods_Johnny_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BB2F0D50181BD21C69672C /* Pods_Johnny_macOS.framework */; };
 		6895970301632C7C5AE828C2 /* Pods_Johnny_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CC95C4BF394EE374FBB57C /* Pods_Johnny_iOS.framework */; };
+		755FAB46A118F33514B15DCC /* Pods_JohnnyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DBC95674A93E8F43E465D3 /* Pods_JohnnyTests.framework */; };
 		81A1978F7B05406B881ADB3A /* Pods_Johnny_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0DDA7A81B773C3D0FB8A61 /* Pods_Johnny_tvOS.framework */; };
 		E9F14BEEE4424D5B6C56B3E4 /* Pods_Johnny_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C1544184E955825AB3866 /* Pods_Johnny_watchOS.framework */; };
 		F3036D361D2584A80056BCE4 /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
@@ -16,6 +17,7 @@
 		F3036D381D2584C30056BCE4 /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
 		F30F64911D46A27500EDD75F /* WatchKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */; };
 		F30F64921D46A39A00EDD75F /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
+		F319959D1D48D60200429F83 /* JohnnyDiskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F319959C1D48D60200429F83 /* JohnnyDiskTests.swift */; };
 		F3382FB91D2594D3009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
 		F3382FBA1D2594D8009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
 		F3382FBB1D2594D9009C2110 /* UIColor+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */; };
@@ -24,6 +26,10 @@
 		F359013A1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
 		F359013B1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */; };
 		F359013E1D2A822400868171 /* AppKit+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F359013C1D2A820900868171 /* AppKit+Johnny.swift */; };
+		F37A20541D48A042007603F5 /* JohnnyMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37A20531D48A042007603F5 /* JohnnyMemoryTests.swift */; };
+		F37A20561D48A042007603F5 /* Johnny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E4CAF31D256069005B30AB /* Johnny.framework */; };
+		F37A205F1D48AC39007603F5 /* johnny-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F35901881D2AA55400868171 /* johnny-logo.png */; };
+		F37A20601D48AC3A007603F5 /* johnny-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F35901881D2AA55400868171 /* johnny-logo.png */; };
 		F3E4CAF71D256069005B30AB /* Johnny.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E4CAF61D256069005B30AB /* Johnny.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB001D25634F005B30AB /* Disk.swift */; };
 		F3E4CB0D1D25634F005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
@@ -56,20 +62,34 @@
 		F3E4CB731D25756B005B30AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB091D25634F005B30AB /* Log.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F37A20571D48A042007603F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3E4CAEA1D256069005B30AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3E4CAF21D256069005B30AB;
+			remoteInfo = "Johnny iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		21E0D1CFEDF17136BE09EAF6 /* Pods-Johnny iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny iOS/Pods-Johnny iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2940E9CDE17C13BEF89587FD /* Pods-Johnny watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny watchOS/Pods-Johnny watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		2FC5D89D3711B8236CC9AEAF /* Pods-Johnny macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny macOS/Pods-Johnny macOS.release.xcconfig"; sourceTree = "<group>"; };
 		324A1C6FCFCDE4D4607FFA6C /* Pods-Johnny watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny watchOS/Pods-Johnny watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		474BE801599BE96B724D19FD /* Pods-JohnnyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JohnnyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JohnnyTests/Pods-JohnnyTests.release.xcconfig"; sourceTree = "<group>"; };
 		4A244C2BFA1C8A46165B8EFB /* Pods-Johnny tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny tvOS/Pods-Johnny tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0DDA7A81B773C3D0FB8A61 /* Pods_Johnny_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CCF136A6E8AB5C5A16204DF /* Pods-JohnnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JohnnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JohnnyTests/Pods-JohnnyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70CC95C4BF394EE374FBB57C /* Pods_Johnny_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A171EDD20823B565EA5999B4 /* Pods-Johnny macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny macOS/Pods-Johnny macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B1BB2F0D50181BD21C69672C /* Pods_Johnny_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1DBC95674A93E8F43E465D3 /* Pods_JohnnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JohnnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B435968A5BEC6BE4A60F0D31 /* Pods-Johnny iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny iOS/Pods-Johnny iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BE8C1544184E955825AB3866 /* Pods_Johnny_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92C9C95885D262CEBDA5A29 /* Pods-Johnny tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny tvOS/Pods-Johnny tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		F3036D321D257FC50056BCE4 /* macOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = macOS.modulemap; sourceTree = "<group>"; };
+		F319959C1D48D60200429F83 /* JohnnyDiskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnnyDiskTests.swift; sourceTree = "<group>"; };
 		F33542F91D258A3D00E3026F /* tvOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = tvOS.modulemap; sourceTree = "<group>"; };
 		F3382FB71D259384009C2110 /* watchOS.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = watchOS.modulemap; sourceTree = "<group>"; };
 		F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Johnny.swift"; sourceTree = "<group>"; };
@@ -80,6 +100,9 @@
 		F35901881D2AA55400868171 /* johnny-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "johnny-logo.png"; sourceTree = "<group>"; };
 		F359018B1D2AC51500868171 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		F359018D1D2AC65800868171 /* Johnny.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Johnny.podspec; sourceTree = SOURCE_ROOT; };
+		F37A20511D48A042007603F5 /* JohnnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JohnnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37A20531D48A042007603F5 /* JohnnyMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JohnnyMemoryTests.swift; sourceTree = "<group>"; };
+		F37A20551D48A042007603F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E4CAF31D256069005B30AB /* Johnny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Johnny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E4CAF61D256069005B30AB /* Johnny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Johnny.h; sourceTree = "<group>"; };
 		F3E4CAF81D256069005B30AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +127,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F37A204E1D48A042007603F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37A20561D48A042007603F5 /* Johnny.framework in Frameworks */,
+				755FAB46A118F33514B15DCC /* Pods_JohnnyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3E4CAEF1D256069005B30AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,6 +182,8 @@
 				D92C9C95885D262CEBDA5A29 /* Pods-Johnny tvOS.release.xcconfig */,
 				324A1C6FCFCDE4D4607FFA6C /* Pods-Johnny watchOS.debug.xcconfig */,
 				2940E9CDE17C13BEF89587FD /* Pods-Johnny watchOS.release.xcconfig */,
+				6CCF136A6E8AB5C5A16204DF /* Pods-JohnnyTests.debug.xcconfig */,
+				474BE801599BE96B724D19FD /* Pods-JohnnyTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -161,6 +195,7 @@
 				B1BB2F0D50181BD21C69672C /* Pods_Johnny_macOS.framework */,
 				4F0DDA7A81B773C3D0FB8A61 /* Pods_Johnny_tvOS.framework */,
 				BE8C1544184E955825AB3866 /* Pods_Johnny_watchOS.framework */,
+				B1DBC95674A93E8F43E465D3 /* Pods_JohnnyTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,6 +211,16 @@
 				F35901881D2AA55400868171 /* johnny-logo.png */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		F37A20521D48A042007603F5 /* JohnnyTests */ = {
+			isa = PBXGroup;
+			children = (
+				F37A20531D48A042007603F5 /* JohnnyMemoryTests.swift */,
+				F319959C1D48D60200429F83 /* JohnnyDiskTests.swift */,
+				F37A20551D48A042007603F5 /* Info.plist */,
+			);
+			path = JohnnyTests;
 			sourceTree = "<group>";
 		};
 		F3D0533D1D47E26A00D9AA84 /* common */ = {
@@ -207,9 +252,10 @@
 			isa = PBXGroup;
 			children = (
 				F3E4CAF51D256069005B30AB /* Johnny */,
-				F3E4CB321D2572FC005B30AB /* Johnny-macOS */,
+				F3E4CB321D2572FC005B30AB /* Johnny macOS */,
 				F3E4CB3F1D2573CD005B30AB /* Johnny tvOS */,
 				F3E4CB4C1D2573FF005B30AB /* Johnny watchOS */,
+				F37A20521D48A042007603F5 /* JohnnyTests */,
 				F3E4CAF41D256069005B30AB /* Products */,
 				2BE576858193DC9687DFEE1A /* Pods */,
 				41D7BE876297A266FC16B606 /* Frameworks */,
@@ -223,6 +269,7 @@
 				F3E4CB311D2572FC005B30AB /* Johnny.framework */,
 				F3E4CB3E1D2573CD005B30AB /* Johnny.framework */,
 				F3E4CB4B1D2573FF005B30AB /* Johnny.framework */,
+				F37A20511D48A042007603F5 /* JohnnyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,14 +302,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F3E4CB321D2572FC005B30AB /* Johnny-macOS */ = {
+		F3E4CB321D2572FC005B30AB /* Johnny macOS */ = {
 			isa = PBXGroup;
 			children = (
 				F3E4CB331D2572FC005B30AB /* Johnny macOS.h */,
 				F3E4CB351D2572FC005B30AB /* Info.plist */,
 				F3036D321D257FC50056BCE4 /* macOS.modulemap */,
 			);
-			name = "Johnny-macOS";
 			path = "Johnny macOS";
 			sourceTree = "<group>";
 		};
@@ -327,6 +373,27 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		F37A20501D48A042007603F5 /* JohnnyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F37A205B1D48A042007603F5 /* Build configuration list for PBXNativeTarget "JohnnyTests" */;
+			buildPhases = (
+				9CDE54CE15726B32DB9F10F5 /* [CP] Check Pods Manifest.lock */,
+				F37A204D1D48A042007603F5 /* Sources */,
+				F37A204E1D48A042007603F5 /* Frameworks */,
+				F37A204F1D48A042007603F5 /* Resources */,
+				2426C00B2B18AC68985090F3 /* [CP] Embed Pods Frameworks */,
+				0A232962B059C1B95B0FECB3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F37A20581D48A042007603F5 /* PBXTargetDependency */,
+			);
+			name = JohnnyTests;
+			productName = JohnnyTests;
+			productReference = F37A20511D48A042007603F5 /* JohnnyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F3E4CAF21D256069005B30AB /* Johnny iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3E4CAFB1D256069005B30AB /* Build configuration list for PBXNativeTarget "Johnny iOS" */;
@@ -416,6 +483,9 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Zoltán Matók";
 				TargetAttributes = {
+					F37A20501D48A042007603F5 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					F3E4CAF21D256069005B30AB = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
@@ -447,15 +517,25 @@
 				F3E4CB301D2572FC005B30AB /* Johnny macOS */,
 				F3E4CB3D1D2573CD005B30AB /* Johnny tvOS */,
 				F3E4CB4A1D2573FF005B30AB /* Johnny watchOS */,
+				F37A20501D48A042007603F5 /* JohnnyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F37A204F1D48A042007603F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37A20601D48AC3A007603F5 /* johnny-logo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3E4CAF11D256069005B30AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37A205F1D48AC39007603F5 /* johnny-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +563,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A232962B059C1B95B0FECB3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JohnnyTests/Pods-JohnnyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1E3AFB920A524B8CDA3685F1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,6 +591,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Johnny tvOS/Pods-Johnny tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2426C00B2B18AC68985090F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JohnnyTests/Pods-JohnnyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		283EE64A8FEC4809223F2190 /* [CP] Copy Pods Resources */ = {
@@ -588,6 +698,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		9CDE54CE15726B32DB9F10F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C929A2C46B940F17E342A381 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,6 +731,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F37A204D1D48A042007603F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F319959D1D48D60200429F83 /* JohnnyDiskTests.swift in Sources */,
+				F37A20541D48A042007603F5 /* JohnnyMemoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3E4CAEE1D256069005B30AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -672,7 +806,39 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F37A20581D48A042007603F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3E4CAF21D256069005B30AB /* Johnny iOS */;
+			targetProxy = F37A20571D48A042007603F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F37A20591D48A042007603F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CCF136A6E8AB5C5A16204DF /* Pods-JohnnyTests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = JohnnyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.JohnnyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F37A205A1D48A042007603F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 474BE801599BE96B724D19FD /* Pods-JohnnyTests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = JohnnyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.JohnnyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F3E4CAF91D256069005B30AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -956,6 +1122,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F37A205B1D48A042007603F5 /* Build configuration list for PBXNativeTarget "JohnnyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37A20591D48A042007603F5 /* Debug */,
+				F37A205A1D48A042007603F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F3E4CAED1D256069005B30AB /* Build configuration list for PBXProject "Johnny" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
