@@ -1,6 +1,6 @@
 ![Logo](/Johnny/johnny-logo.png?raw=true)
 
-![pod](pod.svg?raw=true)
+![pod](https://cdn.rawgit.com/zolomatok/Johnny/master/pod.svg)
 ![language](language.svg?raw=true)
 ![platform](platform.svg?raw=true)
 ![license](license.svg?raw=true)
