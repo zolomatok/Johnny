@@ -53,9 +53,9 @@ Johnny.pull("4KImage") { (value: UIImage?) in
 
 ```
 public protocol Storable {
-associatedtype Result
-static func fromData(data: NSData) -> Result?
-func toData() -> NSData
+    associatedtype Result
+    static func fromData(data: NSData) -> Result?
+    func toData() -> NSData
 }
 ```
 
