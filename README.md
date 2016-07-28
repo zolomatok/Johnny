@@ -1,4 +1,10 @@
-![Alt text](/Johnny/johnny-logo.png?raw=true)
+![Logo](/Johnny/johnny-logo.png?raw=true)
+
+![pod](pod.svg?raw=true)
+![language](language.svg?raw=true)
+![platform](platform.svg?raw=true)
+![license](license.svg?raw=true)
+
 Johnny is a caching library written in Swift.
 
 ## Features
