@@ -480,7 +480,8 @@
 		F3E4CAEA1D256069005B30AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Zoltán Matók";
 				TargetAttributes = {
 					F37A20501D48A042007603F5 = {
