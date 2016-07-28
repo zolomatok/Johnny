@@ -140,7 +140,7 @@ let cachedJohn: User = Johnny.pull("John")
 **CocoaPods**
 
 ```swift
-pod Johnny
+pod 'Johnny'
 ```
 
 ## Attribution
