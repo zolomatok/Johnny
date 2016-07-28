@@ -69,9 +69,9 @@ let stringSet: Set<String> = ["I've", "been", "everywhere"]
 // In case of dictionaries, the value must explicitly conform to Storable (so [String: AnyObject] does not work, while [String: Double] does)
 let dictionary: [String: String] = ["first": "Solitary", "second": "man"]
 
-Johnny.cache(stringArray, key: "folsom")
+Johnny.cache(array, key: "folsom")
 Johnny.cache(stringSet, key: "everywhere")
-Johnny.cache(stringMap, key: "solitary")
+Johnny.cache(dictionary, key: "solitary")
 ```
 
 ### Custom types ###
@@ -127,13 +127,15 @@ let cachedJohn: User = Johnny.pull("John")
 - macOS 10.10+
 - tvOS 9.0+
 - watchOS 2.0+
-- Swift 2.0 (there's also a swift3 branch)
+- Swift 2.0+ (there's also a swift3 branch)
 
 ## Install
 
 **CocoaPods**
 
-`pod Johnny`
+```swift
+pod Johnny
+```
 
 ## Attribution
 I'd like to thank the creators of [Pantry](https://github.com/nickoneill/Pantry) and [Haneke](https://github.com/Haneke/HanekeSwift) as those projects provided much of the inspiration and some code. Johnny was dreamed up to be the best of both worlds.
