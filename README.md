@@ -7,7 +7,7 @@
 
 Johnny is a caching library written in Swift.
 
-## Features
+## Features 
 - [x] Multiplatform, supporting iOS, macOS, tvOS & watchOS
 - [x] First-level memory cache using `NSCache`
 - [x] Second-level LRU disk cache
