@@ -28,7 +28,7 @@ public class Johnny {
     static let disk = Disk()
     
     /// Prefix to include before each key. For example current local user ID, for caching data on a per user basis
-    static var prefix = ""
+    public static var prefix = ""
 
     
     // MARK: - In
