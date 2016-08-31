@@ -110,6 +110,19 @@ extension Double : Storable {
     }
 }
 
+extension Bool : Storable {
+    
+    public static func fromData(data: NSData) -> Bool? {
+        var n: Bool = false
+        data.getBytes(&n, length: sizeof(Bool))
+        return n
+    }
+    
+    public func toData() -> NSData {
+        var n = self
+        return NSData(bytes: &n, length: sizeof(Bool))
+    }
+}
 
 extension String : Storable {
     

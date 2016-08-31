@@ -35,6 +35,7 @@ class JohnnyMemoryTests: XCTestCase {
     
     func testDefaultTypes() {
         let string: String = "Heresy grows from idleness"
+        let bool: Bool = true
         let int: Int = 1
         let int64: Int64 = 2
         let uint: UInt = 3
@@ -50,6 +51,7 @@ class JohnnyMemoryTests: XCTestCase {
         
         
         Johnny.cache(string, key: "testString")
+        Johnny.cache(bool, key: "testBool")
         Johnny.cache(int, key: "testInt")
         Johnny.cache(int64, key: "testInt64")
         Johnny.cache(uint, key: "testUInt")
@@ -66,6 +68,12 @@ class JohnnyMemoryTests: XCTestCase {
             XCTAssert(value == "Heresy grows from idleness", "default string was incorrect")
         } else {
             XCTFail("no default string could be unpacked")
+        }
+        
+        if let value: Bool = Johnny.pull("testBool") {
+            XCTAssert(value == true, "default bool was incorrect")
+        } else {
+            XCTFail("no default bool could be unpacked")
         }
         
         if let value: Int = Johnny.pull("testInt") {

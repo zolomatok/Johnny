@@ -28,6 +28,10 @@ class Disk {
         Async.customQueue(diskQueue) {
             self.calculateSize()
         }
+        
+        #if UIKIT_COMPATIBLE && !WATCHKIT
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(nuke), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
+        #endif
     }
     
     
@@ -88,7 +92,7 @@ class Disk {
     }
 
     
-    func nuke(completion: (()->Void)?) {
+    @objc func nuke(completion: (()->Void)? = nil) {
         Async.customQueue(diskQueue) { 
             let contents = try? NSFileManager.defaultManager().contentsOfDirectoryAtPath(self.path)
             contents?.forEach({ (fileName) in

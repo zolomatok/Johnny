@@ -10,6 +10,13 @@ import Foundation
 
 class Memory: NSCache {
     
+    override init() {
+        super.init()
+        #if UIKIT_COMPATIBLE && !WATCHKIT
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(removeAllObjects), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
+        #endif
+    }
+    
     subscript(key: String) -> AnyObject? {
         
         get {

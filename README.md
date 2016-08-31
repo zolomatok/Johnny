@@ -12,7 +12,7 @@ Johnny is a caching library written in Swift.
 - [x] First-level memory cache using `NSCache`
 - [x] Second-level LRU disk cache
 - [x] Generic cache with out-of-the-box support for
-  - Int, UInt, Int64, UInt64, Float, Double, String (+ Date, Data & URL in the `swift3 branch`)
+  - String, Bool, Int, UInt, Int64, UInt64, Float, Double (+ Date, Data & URL in the `swift3 branch`)
   - NSData, NSDate
   - UIImage, UIColor
   - Arrays, Dictionaries and Sets of the above
@@ -49,6 +49,14 @@ If you know you are retrieving a large object (> 1.5 MB):
 Johnny.pull("4KImage") { (value: UIImage?) in
      
 }
+```
+
+###Prefix###
+
+You can set a global prefix that gets attached to the key parameter in every call to enable for example caching of data on a per userID basis. 
+
+```swift
+Johnny.prefix = localUser.userID
 ```
 
 ## Examples
