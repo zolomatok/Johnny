@@ -81,6 +81,12 @@ class Disk {
     }
     
     private func remove(key: String) {
+        
+        // Only proceed if file exists, otherwise, the whole containing dir will be removed
+        guard NSFileManager.defaultManager().fileExistsAtPath(path, isDirectory: nil) == true else {
+            return
+        }
+        
         do {
             let attributes : NSDictionary =  try NSFileManager.defaultManager().attributesOfItemAtPath(path)
             let fileSize = attributes.fileSize()
