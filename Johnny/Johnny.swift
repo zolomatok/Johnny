@@ -27,9 +27,6 @@ public class Johnny {
     static let memory = Memory()
     static let disk = Disk()
     
-    /// Prefix to include before each key. For example current local user ID, for caching data on a per user basis
-    public static var prefix = ""
-
     
     // MARK: - In
     /**
@@ -41,12 +38,12 @@ public class Johnny {
     public class func cache<T: Storable>(value: T?, key: String) {
         
         // Store in memory
-        memory[prefix+key] = Shell(value: value)
+        memory[key] = Shell(value: value)
         
         // Store in disk
         Async.background {
             let data = value?.toData()
-            disk[prefix+key] = data
+            disk[key] = data
         }
     }
     
@@ -59,12 +56,12 @@ public class Johnny {
     public class func cache<T: Storable>(array: [T]?, key: String) {
         
         // Store in memory
-        memory[prefix+key] = Shell(value: array)
+        memory[key] = Shell(value: array)
         
         // Store in disk
         Async.background {
             let data = array?.toData()
-            disk[prefix+key] = data
+            disk[key] = data
         }
     }
     
@@ -77,12 +74,12 @@ public class Johnny {
     public class func cache<U: StringLiteralConvertible, T: Storable>(dictionary: [U:T]?, key: String) {
         
         // Store in memory
-        memory[prefix+key] = Shell(value: dictionary)
+        memory[key] = Shell(value: dictionary)
         
         // Store in disk
         Async.background {
             let data = dictionary?.toData()
-            disk[prefix+key] = data
+            disk[key] = data
         }
     }
     
@@ -95,12 +92,12 @@ public class Johnny {
     public class func cache<T: Storable>(set: Set<T>?, key: String) {
         
         // Store in memory
-        memory[prefix+key] = Shell(value: set)
+        memory[key] = Shell(value: set)
         
         // Store in disk
         Async.background {
             let data = set?.toData()
-            disk[prefix+key] = data
+            disk[key] = data
         }
     }
     
@@ -117,14 +114,14 @@ public class Johnny {
     public class func pull<T: Storable>(key: String) -> T? {
         
         // Check memory
-        if let value = (memory[prefix+key] as? Shell)?.value as? T { return value }
+        if let value = (memory[key] as? Shell)?.value as? T { return value }
 
         
         // Check disk
-        if let data = disk[prefix+key] {
+        if let data = disk[key] {
     
             let value = T.fromData(data)
-            if let value = value { memory[prefix+key] = Shell(value: value) }
+            if let value = value { memory[key] = Shell(value: value) }
             return value as? T
         }
         
@@ -141,15 +138,15 @@ public class Johnny {
     public class func pull<T: Storable>(key: String) -> [T]? {
         
         // Check memory
-        if let value = (memory[prefix+key] as? Shell)?.value as? [T] { return value }
+        if let value = (memory[key] as? Shell)?.value as? [T] { return value }
         
         
         // Check disk
-        if let data = disk[prefix+key] {
+        if let data = disk[key] {
             
             let dataArray = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [NSData]
             let value = dataArray?.map{ T.fromData($0) as! T}
-            if let value = value { memory[prefix+key] = Shell(value: value) }
+            if let value = value { memory[key] = Shell(value: value) }
             return value
         }
         
@@ -166,15 +163,15 @@ public class Johnny {
     public class func pull<T: Storable>(key: String) -> [String: T]? {
         
         // Check memory
-        if let value = (memory[prefix+key] as? Shell)?.value as? [String: T] { return value }
+        if let value = (memory[key] as? Shell)?.value as? [String: T] { return value }
 
         
         // Check disk
-        if let data = disk[prefix+key] {
+        if let data = disk[key] {
             
             let dataMap = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: NSData]
             let value = dataMap?.map{ T.fromData($0) as! T }
-            if let value = value { memory[prefix+key] = Shell(value: value) }
+            if let value = value { memory[key] = Shell(value: value) }
             return value
         }
         
@@ -191,11 +188,11 @@ public class Johnny {
     public class func pull<T: Storable>(key: String) -> Set<T>? {
         
         // Check memory
-        if let value = (memory[prefix+key] as? Shell)?.value as? Set<T> { return value }
+        if let value = (memory[key] as? Shell)?.value as? Set<T> { return value }
         
         
         // Check disk
-        if let data = disk[prefix+key] {
+        if let data = disk[key] {
 
             var value: Set<T>?
             let dataSet = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Set<NSData>
@@ -203,7 +200,7 @@ public class Johnny {
             if let array = array {
                 value = Set(array)
             }
-            if let value = value { memory[prefix+key] = Shell(value: value) }
+            if let value = value { memory[key] = Shell(value: value) }
             
             return value
         }
@@ -224,7 +221,7 @@ public class Johnny {
     public class func pull<T: Storable>(key: String, completion: ((value: T?)->Void)? = nil ) {
         
         // Check memory
-        if let value = (memory[prefix+key] as? Shell)?.value as? T {
+        if let value = (memory[key] as? Shell)?.value as? T {
             completion?(value: value)
             return
         }
@@ -233,14 +230,14 @@ public class Johnny {
         // Check disk
         var value: T?
         Async.background {
-            let data = disk[prefix+key]
+            let data = disk[key]
             if data != nil {
                 value = T.fromData(data!) as? T
             }
         }.main { 
             guard let value = value else { completion?(value: nil); return }
             
-            memory[prefix+key] = Shell(value: value)
+            memory[key] = Shell(value: value)
             completion?(value: value)
         }
     }
@@ -255,7 +252,7 @@ public class Johnny {
     public class func pull<T: Storable>(key: String, completion: ((value: [T]?)->Void)? = nil ) {
         
         // Check memory
-        if let value = (memory[prefix+key] as? Shell)?.value as? [T] {
+        if let value = (memory[key] as? Shell)?.value as? [T] {
             completion?(value: value)
             return
         }
@@ -264,7 +261,7 @@ public class Johnny {
         // Check disk
         var value: [T]?
         Async.background {
-            let data = disk[prefix+key]
+            let data = disk[key]
             if data != nil {
                 let dataArray = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as? [NSData]
                 value = dataArray?.map{ T.fromData($0) as! T}
@@ -272,7 +269,7 @@ public class Johnny {
         }.main {
             guard let value = value else { completion?(value: nil); return }
                 
-            memory[prefix+key] = Shell(value: value)
+            memory[key] = Shell(value: value)
             completion?(value: value)
         }
     }
@@ -287,7 +284,7 @@ public class Johnny {
     public class func pull<T: Storable>(key: String, completion: ((value: [String: T]?)->Void)? = nil ) {
         
         // Check memory
-        if let value = (memory[prefix+key] as? Shell)?.value as? [String: T] {
+        if let value = (memory[key] as? Shell)?.value as? [String: T] {
             completion?(value: value)
             return
         }
@@ -296,7 +293,7 @@ public class Johnny {
         // Check disk
         var value: [String: T]?
         Async.background {
-            let data = disk[prefix+key]
+            let data = disk[key]
             if let data = data {
                 let dataMap = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: NSData]
                 value = dataMap?.map{ T.fromData($0) as! T}
@@ -304,7 +301,7 @@ public class Johnny {
         }.main {
             guard let value = value else { completion?(value: nil); return }
                 
-            memory[prefix+key] = Shell(value: value)
+            memory[key] = Shell(value: value)
             completion?(value: value)
         }
     }
@@ -319,7 +316,7 @@ public class Johnny {
     public class func pull<T: Storable>(key: String, completion: ((value: Set<T>?)->Void)? = nil ) {
         
         // Check memory
-        if let value = (memory[prefix+key] as? Shell)?.value as? Set<T> {
+        if let value = (memory[key] as? Shell)?.value as? Set<T> {
             completion?(value: value)
             return
         }
@@ -328,7 +325,7 @@ public class Johnny {
         // Check disk
         var value: Set<T>?
         Async.background {
-            let data = disk[prefix+key]
+            let data = disk[key]
             if let data = data {
                 let dataSet = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Set<NSData>
                 let array = dataSet?.map{ T.fromData($0) as! T }
@@ -339,7 +336,7 @@ public class Johnny {
         }.main {
             guard let value = value else { completion?(value: nil); return }
             
-            memory[prefix+key] = Shell(value: value)
+            memory[key] = Shell(value: value)
             completion?(value: value)
         }
     }

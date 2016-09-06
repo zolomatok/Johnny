@@ -119,7 +119,7 @@ class Disk {
         var isDir: ObjCBool = false
         let exists = NSFileManager.defaultManager().fileExistsAtPath(path, isDirectory: &isDir)
         if !exists || !isDir {
-            try! NSFileManager.defaultManager().createDirectoryAtPath(path, withIntermediateDirectories: false, attributes: nil)
+            try! NSFileManager.defaultManager().createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil)
         }
     }
     
