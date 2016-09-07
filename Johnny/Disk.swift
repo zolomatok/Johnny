@@ -67,7 +67,8 @@ class Disk {
     
     
     private func add(key: String, newValue: NSData) {
-        let pastAttributes: NSDictionary? = try? NSFileManager.defaultManager().attributesOfItemAtPath(path)
+        createDirectory()
+        let pastAttributes: NSDictionary? = try? NSFileManager.defaultManager().attributesOfItemAtPath(getPath(key))
         do {
             try newValue.writeToFile(getPath(key), options: NSDataWritingOptions.AtomicWrite)
             if let attributes = pastAttributes {
@@ -83,15 +84,15 @@ class Disk {
     private func remove(key: String) {
         
         // Only proceed if file exists, otherwise, the whole containing dir will be removed
-        guard NSFileManager.defaultManager().fileExistsAtPath(path, isDirectory: nil) == true else {
+        guard NSFileManager.defaultManager().fileExistsAtPath(getPath(key), isDirectory: nil) == true else {
             return
         }
         
         do {
             let attributes : NSDictionary =  try NSFileManager.defaultManager().attributesOfItemAtPath(path)
             let fileSize = attributes.fileSize()
-            print("JOHNNY REMOVING PATH: ", path)
-            try NSFileManager.defaultManager().removeItemAtPath(path)
+            print("JOHNNY REMOVING PATH: ", getPath(key))
+            try NSFileManager.defaultManager().removeItemAtPath(getPath(key))
             substractSize(fileSize)
         } catch {
             if isNoSuchFileError(error as NSError) { Log.log("File remove error", error) }
