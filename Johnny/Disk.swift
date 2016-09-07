@@ -90,6 +90,7 @@ class Disk {
         do {
             let attributes : NSDictionary =  try NSFileManager.defaultManager().attributesOfItemAtPath(path)
             let fileSize = attributes.fileSize()
+            print("JOHNNY REMOVING PATH: ", path)
             try NSFileManager.defaultManager().removeItemAtPath(path)
             substractSize(fileSize)
         } catch {
