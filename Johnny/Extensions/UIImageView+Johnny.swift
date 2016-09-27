@@ -44,7 +44,7 @@ extension UIImageView {
                 let data = NSData(contentsOfURL: NSURL(string: url)!)
                 if let data = data {
                     img = UIImage(data: data)
-                    img = self.resizeImage(img)
+//                    img = self.resizeImage(img)
                 }
             }.main {
                 

@@ -28,7 +28,7 @@ extension NSImage : Storable {
     public func toData() -> NSData {
         let data = self.TIFFRepresentation
         let rep = NSBitmapImageRep(data: data!)
-        let compression = 0.9
+        let compression = 1.0
         let properties = [NSImageCompressionFactor: compression]
         return rep!.representationUsingType(.NSJPEGFileType, properties: properties)!
     }
