@@ -8,26 +8,24 @@
 
 import XCTest
 @testable import Johnny
-import Async
 
 class JohnnyMemoryTests: XCTestCase {
     
-    var token: dispatch_once_t = 0
-    var disk = Disk()
-    
-    override func setUp() {
-        super.setUp()
-        dispatch_once(&token) { 
-            let cachesPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+    private lazy var __once: () = { 
+            let cachesPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
             let johhny = "io.johhny"
-            let path = (cachesPath as NSString).stringByAppendingPathComponent(johhny)
-            let paths = try? NSFileManager.defaultManager().contentsOfDirectoryAtPath(path)
+            let path = (cachesPath as NSString).appendingPathComponent(johhny)
+            let paths = try? FileManager.default.contentsOfDirectory(atPath: path)
             if let paths = paths {
                 for p in paths {
-                    let _ = try? NSFileManager.defaultManager().removeItemAtPath(p)
+                    let _ = try? FileManager.default.removeItem(atPath: p)
                 }
             }
-        }
+        }()
+        
+    override func setUp() {
+        super.setUp()
+        _ = self.__once
     }
     
     override func tearDown() { super.tearDown() }
@@ -43,11 +41,11 @@ class JohnnyMemoryTests: XCTestCase {
         let float: Float = 10.2
         let double: Double = 20.6
         
-        let ip = NSBundle(forClass: self.dynamicType).resourcePath!.stringByAppendingString("/johnny-logo.png")
+        let ip = Bundle(for: type(of: self)).resourcePath! + "/johnny-logo.png"
         let image = UIImage(contentsOfFile: ip)!
         let data = image.toData()
-        let date: NSDate = NSDate(timeIntervalSince1970: 1459355217)
-        let color = UIColor.blueColor()
+        let date: Date = Date(timeIntervalSince1970: 1459355217)
+        let color = UIColor.blue
         
         
         Johnny.cache(string, key: "testString")
@@ -118,20 +116,20 @@ class JohnnyMemoryTests: XCTestCase {
             XCTFail("no default Image could be unpacked")
         }
         
-        if let value: NSData = Johnny.pull("testData") {
+        if let value: Data = Johnny.pull("testData") {
             XCTAssert(value == data, "default Data was incorrect")
         } else {
             XCTFail("no default Data could be unpacked")
         }
         
-        if let value: NSDate = Johnny.pull("testDate") {
+        if let value: Date = Johnny.pull("testDate") {
             XCTAssert(value.timeIntervalSince1970 == 1459355217 , "default Date was incorrect")
         } else {
             XCTFail("no default Date could be unpacked")
         }
         
         if let value: UIColor = Johnny.pull("testColor") {
-            XCTAssert(value == UIColor.blueColor(), "default Color was incorrect")
+            XCTAssert(value == UIColor.blue, "default Color was incorrect")
         } else {
             XCTFail("no default Color could be unpacked")
         }
@@ -147,11 +145,11 @@ class JohnnyMemoryTests: XCTestCase {
         let float: Float? = 10.2
         let double: Double? = 20.6
         
-        let ip = NSBundle(forClass: self.dynamicType).resourcePath!.stringByAppendingString("/johnny-logo.png")
+        let ip = Bundle(for: type(of: self)).resourcePath! + "/johnny-logo.png"
         let image = UIImage(contentsOfFile: ip)
-        let data: NSData? = image?.toData()
-        let date: NSDate? = NSDate(timeIntervalSince1970: 1459355217)
-        let color: UIColor? = UIColor.blueColor()
+        let data: Data? = image?.toData()
+        let date: Date? = Date(timeIntervalSince1970: 1459355217)
+        let color: UIColor? = UIColor.blue
         
         
         Johnny.cache(string, key: "testStringOptional")
@@ -167,68 +165,68 @@ class JohnnyMemoryTests: XCTestCase {
         Johnny.cache(color, key: "testColorOptional")
         
         
-        if let value: String? = Johnny.pull("testStringOptional") {
+        if let value: String = Johnny.pull("testStringOptional") {
             XCTAssert(value == "Heresy grows from idleness", "default optional string was incorrect")
         } else {
             XCTFail("no default optional string could be unpacked")
         }
         
-        if let value: Int? = Johnny.pull("testIntOptional") {
+        if let value: Int = Johnny.pull("testIntOptional") {
             XCTAssert(value == 1, "default optional int was incorrect")
         } else {
             XCTFail("no default optional int could be unpacked")
         }
         
-        if let value: Int64? = Johnny.pull("testInt64Optional") {
+        if let value: Int64 = Johnny.pull("testInt64Optional") {
             XCTAssert(value == 2, "default optional int64 was incorrect")
         } else {
             XCTFail("no default optional int64 could be unpacked")
         }
         
-        if let value: UInt? = Johnny.pull("testUIntOptional") {
+        if let value: UInt = Johnny.pull("testUIntOptional") {
             XCTAssert(value == 3, "default optional uint was incorrect")
         } else {
             XCTFail("no default optional uint could be unpacked")
         }
         
-        if let value: UInt64? = Johnny.pull("testUInt64Optional") {
+        if let value: UInt64 = Johnny.pull("testUInt64Optional") {
             XCTAssert(value == 4, "default optional uint64 was incorrect")
         } else {
             XCTFail("no default optional uint64 could be unpacked")
         }
         
-        if let value: Float? = Johnny.pull("testFloatOptional") {
+        if let value: Float = Johnny.pull("testFloatOptional") {
             XCTAssert(value == 10.2, "default optional float was incorrect")
         } else {
             XCTFail("no default optional float could be unpacked")
         }
         
-        if let value: Double? = Johnny.pull("testDoubleOptional") {
+        if let value: Double = Johnny.pull("testDoubleOptional") {
             XCTAssert(value == 20.6, "default optional Double was incorrect")
         } else {
             XCTFail("no default optional Double could be unpacked")
         }
         
-        if let value: UIImage? = Johnny.pull("testImageOptional") {
-            XCTAssert(value!.toData() == data, "default optional Image was incorrect")
+        if let value: UIImage = Johnny.pull("testImageOptional") {
+            XCTAssert(value.toData() == data, "default optional Image was incorrect")
         } else {
             XCTFail("no default optional Image could be unpacked")
         }
         
-        if let value: NSData? = Johnny.pull("testDataOptional") {
+        if let value: Data = Johnny.pull("testDataOptional") {
             XCTAssert(value == data, "default optional Data was incorrect")
         } else {
             XCTFail("no default optional Data could be unpacked")
         }
         
-        if let value: NSDate? = Johnny.pull("testDateOptional") {
-            XCTAssert(value!.timeIntervalSince1970 == 1459355217 , "default optional Date was incorrect")
+        if let value: Date = Johnny.pull("testDateOptional") {
+            XCTAssert(value.timeIntervalSince1970 == 1459355217 , "default optional Date was incorrect")
         } else {
             XCTFail("no default optional Date could be unpacked")
         }
         
-        if let value: UIColor? = Johnny.pull("testColorOptional") {
-            XCTAssert(value == UIColor.blueColor(), "default optional Color was incorrect")
+        if let value: UIColor = Johnny.pull("testColorOptional") {
+            XCTAssert(value == UIColor.blue, "default optional Color was incorrect")
         } else {
             XCTFail("no default optional Color could be unpacked")
         }
@@ -237,21 +235,21 @@ class JohnnyMemoryTests: XCTestCase {
     
     func testCollections() {
         
-        let ip = NSBundle(forClass: self.dynamicType).resourcePath!.stringByAppendingString("/johnny-logo.png")
+        let ip = Bundle(for: type(of: self)).resourcePath! + "/johnny-logo.png"
         let image = UIImage(contentsOfFile: ip)!
         let data = image.toData()
         
         let stringArray: [String] = ["Heresy", "grows", "from", "idleness"]
         let intArray: [Int] = [1,2]
-        let dataArray: [NSData] = [data]
+        let dataArray: [Data] = [data]
         
         let stringMap: [String: String] = ["first": "Heresy", "second": "grows"]
         let intMap: [String: Int] = ["first": 1, "second": 2]
-        let dataMap: [String: NSData] = ["first": data]
+        let dataMap: [String: Data] = ["first": data]
         
         let stringSet: Set<String> = ["Heresy", "grows", "from", "idleness"]
         let intSet: Set<Int> = [1,2]
-        let dataSet: Set<NSData> = [data]
+        let dataSet: Set<Data> = [data]
         
         
         Johnny.cache(stringArray, key: "testStringArray")
@@ -277,7 +275,7 @@ class JohnnyMemoryTests: XCTestCase {
             XCTFail("no default int array could be unpacked")
         }
         
-        if let value: [NSData] = Johnny.pull("testDataArray") {
+        if let value: [Data] = Johnny.pull("testDataArray") {
             XCTAssert(value == [data], "default int array was incorrect")
         } else {
             XCTFail("no default int array could be unpacked")
@@ -295,7 +293,7 @@ class JohnnyMemoryTests: XCTestCase {
             XCTFail("no default int map could be unpacked")
         }
         
-        if let value: [String: NSData] = Johnny.pull("testDataMap") {
+        if let value: [String: Data] = Johnny.pull("testDataMap") {
             XCTAssert(value == ["first": data], "default data map was incorrect")
         } else {
             XCTFail("no default data map could be unpacked")
@@ -313,7 +311,7 @@ class JohnnyMemoryTests: XCTestCase {
             XCTFail("no default int set could be unpacked")
         }
         
-        if let value: Set<NSData> = Johnny.pull("testDataSet") {
+        if let value: Set<Data> = Johnny.pull("testDataSet") {
             XCTAssert(value == [data], "default int set was incorrect")
         } else {
             XCTFail("no default int set could be unpacked")
@@ -322,21 +320,21 @@ class JohnnyMemoryTests: XCTestCase {
     
     
     func testOptionalCollections() {
-        let ip = NSBundle(forClass: self.dynamicType).resourcePath!.stringByAppendingString("/johnny-logo.png")
+        let ip = Bundle(for: type(of: self)).resourcePath! + "/johnny-logo.png"
         let image = UIImage(contentsOfFile: ip)!
         let data = image.toData()
         
         let stringArray: [String]? = ["Heresy", "grows", "from", "idleness"]
         let intArray: [Int]? = [1,2]
-        let dataArray: [NSData]? = [data]
+        let dataArray: [Data]? = [data]
         
         let stringMap: [String: String]? = ["first": "Heresy", "second": "grows"]
         let intMap: [String: Int]? = ["first": 1, "second": 2]
-        let dataMap: [String: NSData]? = ["first": data]
+        let dataMap: [String: Data]? = ["first": data]
         
         let stringSet: Set<String>? = ["Heresy", "grows", "from", "idleness"]
         let intSet: Set<Int>? = [1,2]
-        let dataSet: Set<NSData>? = [data]
+        let dataSet: Set<Data>? = [data]
         
         
         Johnny.cache(stringArray, key: "testStringArrayOptional")
@@ -362,7 +360,7 @@ class JohnnyMemoryTests: XCTestCase {
             XCTFail("no default optional int array could be unpacked")
         }
         
-        if let value: [NSData] = Johnny.pull("testDataArrayOptional") {
+        if let value: [Data] = Johnny.pull("testDataArrayOptional") {
             XCTAssert(value == [data], "default optional int array was incorrect")
         } else {
             XCTFail("no default optional int array could be unpacked")
@@ -380,7 +378,7 @@ class JohnnyMemoryTests: XCTestCase {
             XCTFail("no default optional int map could be unpacked")
         }
         
-        if let value: [String: NSData] = Johnny.pull("testDataMapOptional") {
+        if let value: [String: Data] = Johnny.pull("testDataMapOptional") {
             XCTAssert(value == ["first": data], "default optional data map was incorrect")
         } else {
             XCTFail("no default optional data map could be unpacked")
@@ -398,7 +396,7 @@ class JohnnyMemoryTests: XCTestCase {
             XCTFail("no default optional int set could be unpacked")
         }
         
-        if let value: Set<NSData> = Johnny.pull("testDataSetOptional") {
+        if let value: Set<Data> = Johnny.pull("testDataSetOptional") {
             XCTAssert(value == [data], "default optional int set was incorrect")
         } else {
             XCTFail("no default optional int set could be unpacked")
@@ -452,8 +450,8 @@ class Ultramarine {
 extension Ultramarine: Storable {
     typealias Result = Ultramarine
     
-    static func fromData(data: NSData) -> Ultramarine.Result? {
-        let dict = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions()) as! [NSObject: AnyObject]
+    static func fromData(_ data: Data) -> Ultramarine.Result? {
+        let dict = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) as! [AnyHashable: Any]
         
         let spacemarine = Ultramarine()
         spacemarine.identification = dict["identification"] as! Int
@@ -461,8 +459,8 @@ extension Ultramarine: Storable {
         return spacemarine
     }
     
-    func toData() -> NSData {
-        let json = ["identification": identification, "badasery": badassery.rawValue]
-        return try! NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions())
+    func toData() -> Data {
+        let json = ["identification": identification, "badasery": badassery.rawValue] as [String : Any]
+        return try! JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions())
     }
 }

@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import Async
 
 extension UIImageView {
     
-    public func imageWithURL(url: String?, placeholder: UIImage? = nil, completion: ((image: UIImage?)->Void)? = nil) {
+    public func imageWithURL(_ url: String?, placeholder: UIImage? = nil, completion: ((_ image: UIImage?)->Void)? = nil) {
         
         // Handle nil
         guard let url = url else {
-            completion?(image: nil)
+            completion?(nil)
             return
         }
         
@@ -33,33 +32,34 @@ extension UIImageView {
             // Return cached value
             if let cached = cached {
                 if completion == nil { self.image = cached }
-                else { completion?(image: cached) }
+                else { completion?(cached) }
                 return
             }
             
             
             // Download from URL
             var img: UIImage?
-            Async.background {
-                let data = NSData(contentsOfURL: NSURL(string: url)!)
+            DispatchQueue.global(qos: .background).async {
+                let data = try? Data(contentsOf: URL(string: url)!)
                 if let data = data {
                     img = UIImage(data: data)
 //                    img = self.resizeImage(img)
                 }
-            }.main {
                 
-                // Save to cache & return
-                if img != nil { Johnny.cache(img, key: url) }
-                if completion == nil {
-                    self.image = img
+                DispatchQueue.main.async {
+                    // Save to cache & return
+                    if img != nil { Johnny.cache(img, key: url) }
+                    if completion == nil {
+                        self.image = img
+                    }
+                    else { completion?(img) }
                 }
-                else { completion?(image: img) }
             }
         }
     }
     
     
-    private func resizeImage(img: UIImage?) -> UIImage? {
+    fileprivate func resizeImage(_ img: UIImage?) -> UIImage? {
         
         guard let img = img else { return nil }
         
@@ -67,11 +67,11 @@ extension UIImageView {
         // Get target size
         var targetSize: CGSize
         switch self.contentMode {
-        case .ScaleToFill:
+        case .scaleToFill:
             targetSize = bounds.size
-        case .ScaleAspectFit:
+        case .scaleAspectFit:
             targetSize = img.size.aspectFitSize(bounds.size)
-        case .ScaleAspectFill:
+        case .scaleAspectFill:
             targetSize = img.size.aspectFillSize(bounds.size)
         default:
             return img

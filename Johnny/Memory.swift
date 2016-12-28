@@ -8,23 +8,27 @@
 
 import Foundation
 
-class Memory: NSCache {
+class Memory: NSCache<AnyObject, AnyObject> {
     
     override init() {
         super.init()
         #if UIKIT_COMPATIBLE && !WATCHKIT
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(removeAllObjects), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(removeAllObjects), name: .UIApplicationDidReceiveMemoryWarning, object: nil)
         #endif
     }
     
     subscript(key: String) -> AnyObject? {
         
         get {
-            return self.objectForKey(key)
+            return self.object(forKey: key as AnyObject)
         }
         
         set(newValue) {
-            self.setObject(newValue!, forKey: key)
+            if let newValue = newValue {
+                self.setObject(newValue, forKey: key as AnyObject)
+            } else {
+                self.removeObject(forKey: key as AnyObject)
+            }
         }
     }
 }

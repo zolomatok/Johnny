@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56C0F2FA341593DFAD05D1BF /* Pods_Johnny_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BB2F0D50181BD21C69672C /* Pods_Johnny_macOS.framework */; };
-		6895970301632C7C5AE828C2 /* Pods_Johnny_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CC95C4BF394EE374FBB57C /* Pods_Johnny_iOS.framework */; };
-		755FAB46A118F33514B15DCC /* Pods_JohnnyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DBC95674A93E8F43E465D3 /* Pods_JohnnyTests.framework */; };
-		81A1978F7B05406B881ADB3A /* Pods_Johnny_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0DDA7A81B773C3D0FB8A61 /* Pods_Johnny_tvOS.framework */; };
-		E9F14BEEE4424D5B6C56B3E4 /* Pods_Johnny_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C1544184E955825AB3866 /* Pods_Johnny_watchOS.framework */; };
 		F3036D361D2584A80056BCE4 /* UIButton+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */; };
 		F3036D371D2584B00056BCE4 /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
 		F3036D381D2584C30056BCE4 /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
@@ -73,21 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		21E0D1CFEDF17136BE09EAF6 /* Pods-Johnny iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny iOS/Pods-Johnny iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		2940E9CDE17C13BEF89587FD /* Pods-Johnny watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny watchOS/Pods-Johnny watchOS.release.xcconfig"; sourceTree = "<group>"; };
-		2FC5D89D3711B8236CC9AEAF /* Pods-Johnny macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny macOS/Pods-Johnny macOS.release.xcconfig"; sourceTree = "<group>"; };
-		324A1C6FCFCDE4D4607FFA6C /* Pods-Johnny watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny watchOS/Pods-Johnny watchOS.debug.xcconfig"; sourceTree = "<group>"; };
-		474BE801599BE96B724D19FD /* Pods-JohnnyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JohnnyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JohnnyTests/Pods-JohnnyTests.release.xcconfig"; sourceTree = "<group>"; };
-		4A244C2BFA1C8A46165B8EFB /* Pods-Johnny tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny tvOS/Pods-Johnny tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		4F0DDA7A81B773C3D0FB8A61 /* Pods_Johnny_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CCF136A6E8AB5C5A16204DF /* Pods-JohnnyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JohnnyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JohnnyTests/Pods-JohnnyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		70CC95C4BF394EE374FBB57C /* Pods_Johnny_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A171EDD20823B565EA5999B4 /* Pods-Johnny macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny macOS/Pods-Johnny macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		B1BB2F0D50181BD21C69672C /* Pods_Johnny_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1DBC95674A93E8F43E465D3 /* Pods_JohnnyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JohnnyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B435968A5BEC6BE4A60F0D31 /* Pods-Johnny iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny iOS/Pods-Johnny iOS.release.xcconfig"; sourceTree = "<group>"; };
-		BE8C1544184E955825AB3866 /* Pods_Johnny_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Johnny_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D92C9C95885D262CEBDA5A29 /* Pods-Johnny tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Johnny tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Johnny tvOS/Pods-Johnny tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		F3036D321D257FC50056BCE4 /* macOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = macOS.modulemap; sourceTree = "<group>"; };
 		F319959C1D48D60200429F83 /* JohnnyDiskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JohnnyDiskTests.swift; sourceTree = "<group>"; };
 		F31E2FE21D49F10B009EE3F1 /* johhny-logo.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = "johhny-logo.sketch"; sourceTree = SOURCE_ROOT; };
@@ -99,7 +79,6 @@
 		F33542F91D258A3D00E3026F /* tvOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = tvOS.modulemap; sourceTree = "<group>"; };
 		F3382FB71D259384009C2110 /* watchOS.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = watchOS.modulemap; sourceTree = "<group>"; };
 		F3382FB81D2594D3009C2110 /* UIColor+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Johnny.swift"; sourceTree = "<group>"; };
-		F346D6C81D2ACC13001F2F6A /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = SOURCE_ROOT; };
 		F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Johnny.swift"; sourceTree = "<group>"; };
 		F359013C1D2A820900868171 /* AppKit+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKit+Johnny.swift"; sourceTree = "<group>"; };
 		F359013F1D2A9C9A00868171 /* WatchKit+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WatchKit+Johnny.swift"; sourceTree = "<group>"; };
@@ -112,7 +91,6 @@
 		F3E4CAF31D256069005B30AB /* Johnny.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Johnny.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E4CAF61D256069005B30AB /* Johnny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Johnny.h; sourceTree = "<group>"; };
 		F3E4CAF81D256069005B30AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3E4CAFE1D256192005B30AB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F3E4CB001D25634F005B30AB /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
 		F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stdlib+Johnny.swift"; sourceTree = "<group>"; };
 		F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Johnny.swift"; sourceTree = "<group>"; };
@@ -138,7 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37A20561D48A042007603F5 /* Johnny.framework in Frameworks */,
-				755FAB46A118F33514B15DCC /* Pods_JohnnyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6895970301632C7C5AE828C2 /* Pods_Johnny_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56C0F2FA341593DFAD05D1BF /* Pods_Johnny_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81A1978F7B05406B881ADB3A /* Pods_Johnny_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,50 +144,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F14BEEE4424D5B6C56B3E4 /* Pods_Johnny_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2BE576858193DC9687DFEE1A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				21E0D1CFEDF17136BE09EAF6 /* Pods-Johnny iOS.debug.xcconfig */,
-				B435968A5BEC6BE4A60F0D31 /* Pods-Johnny iOS.release.xcconfig */,
-				A171EDD20823B565EA5999B4 /* Pods-Johnny macOS.debug.xcconfig */,
-				2FC5D89D3711B8236CC9AEAF /* Pods-Johnny macOS.release.xcconfig */,
-				4A244C2BFA1C8A46165B8EFB /* Pods-Johnny tvOS.debug.xcconfig */,
-				D92C9C95885D262CEBDA5A29 /* Pods-Johnny tvOS.release.xcconfig */,
-				324A1C6FCFCDE4D4607FFA6C /* Pods-Johnny watchOS.debug.xcconfig */,
-				2940E9CDE17C13BEF89587FD /* Pods-Johnny watchOS.release.xcconfig */,
-				6CCF136A6E8AB5C5A16204DF /* Pods-JohnnyTests.debug.xcconfig */,
-				474BE801599BE96B724D19FD /* Pods-JohnnyTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		41D7BE876297A266FC16B606 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				70CC95C4BF394EE374FBB57C /* Pods_Johnny_iOS.framework */,
-				B1BB2F0D50181BD21C69672C /* Pods_Johnny_macOS.framework */,
-				4F0DDA7A81B773C3D0FB8A61 /* Pods_Johnny_tvOS.framework */,
-				BE8C1544184E955825AB3866 /* Pods_Johnny_watchOS.framework */,
-				B1DBC95674A93E8F43E465D3 /* Pods_JohnnyTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F359018C1D2AC51E00868171 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
 				F3E4CAF81D256069005B30AB /* Info.plist */,
 				F359018B1D2AC51500868171 /* README.md */,
 				F359018D1D2AC65800868171 /* Johnny.podspec */,
-				F3E4CAFE1D256192005B30AB /* Podfile */,
-				F346D6C81D2ACC13001F2F6A /* Podfile.lock */,
 				F35901881D2AA55400868171 /* johnny-logo.png */,
 				F31E2FE21D49F10B009EE3F1 /* johhny-logo.sketch */,
 				F31E2FE41D4A1016009EE3F1 /* tags.sketch */,
@@ -269,8 +211,6 @@
 				F3E4CB4C1D2573FF005B30AB /* Johnny watchOS */,
 				F37A20521D48A042007603F5 /* JohnnyTests */,
 				F3E4CAF41D256069005B30AB /* Products */,
-				2BE576858193DC9687DFEE1A /* Pods */,
-				41D7BE876297A266FC16B606 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -389,12 +329,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F37A205B1D48A042007603F5 /* Build configuration list for PBXNativeTarget "JohnnyTests" */;
 			buildPhases = (
-				9CDE54CE15726B32DB9F10F5 /* [CP] Check Pods Manifest.lock */,
 				F37A204D1D48A042007603F5 /* Sources */,
 				F37A204E1D48A042007603F5 /* Frameworks */,
 				F37A204F1D48A042007603F5 /* Resources */,
-				2426C00B2B18AC68985090F3 /* [CP] Embed Pods Frameworks */,
-				0A232962B059C1B95B0FECB3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -410,12 +347,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3E4CAFB1D256069005B30AB /* Build configuration list for PBXNativeTarget "Johnny iOS" */;
 			buildPhases = (
-				35C9F0342C26DBB4203660FD /* [CP] Check Pods Manifest.lock */,
 				F3E4CAEE1D256069005B30AB /* Sources */,
 				F3E4CAEF1D256069005B30AB /* Frameworks */,
 				F3E4CAF01D256069005B30AB /* Headers */,
 				F3E4CAF11D256069005B30AB /* Resources */,
-				283EE64A8FEC4809223F2190 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -430,12 +365,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3E4CB381D2572FC005B30AB /* Build configuration list for PBXNativeTarget "Johnny macOS" */;
 			buildPhases = (
-				921A0910FEDBA3FE2E943615 /* [CP] Check Pods Manifest.lock */,
 				F3E4CB2C1D2572FC005B30AB /* Sources */,
 				F3E4CB2D1D2572FC005B30AB /* Frameworks */,
 				F3E4CB2E1D2572FC005B30AB /* Headers */,
 				F3E4CB2F1D2572FC005B30AB /* Resources */,
-				58ACCE4289832C2A96E0660A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -450,12 +383,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3E4CB431D2573CD005B30AB /* Build configuration list for PBXNativeTarget "Johnny tvOS" */;
 			buildPhases = (
-				C929A2C46B940F17E342A381 /* [CP] Check Pods Manifest.lock */,
 				F3E4CB391D2573CD005B30AB /* Sources */,
 				F3E4CB3A1D2573CD005B30AB /* Frameworks */,
 				F3E4CB3B1D2573CD005B30AB /* Headers */,
 				F3E4CB3C1D2573CD005B30AB /* Resources */,
-				1E3AFB920A524B8CDA3685F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -470,12 +401,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3E4CB501D2573FF005B30AB /* Build configuration list for PBXNativeTarget "Johnny watchOS" */;
 			buildPhases = (
-				5CCB0096C6E9CED9B3136569 /* [CP] Check Pods Manifest.lock */,
 				F3E4CB461D2573FF005B30AB /* Sources */,
 				F3E4CB471D2573FF005B30AB /* Frameworks */,
 				F3E4CB481D2573FF005B30AB /* Headers */,
 				F3E4CB491D2573FF005B30AB /* Resources */,
-				6DBAB1717059C69B91B2C7B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -493,23 +422,28 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Zoltán Matók";
 				TargetAttributes = {
 					F37A20501D48A042007603F5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					F3E4CAF21D256069005B30AB = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					F3E4CB301D2572FC005B30AB = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					F3E4CB3D1D2573CD005B30AB = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					F3E4CB4A1D2573FF005B30AB = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -573,174 +507,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0A232962B059C1B95B0FECB3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JohnnyTests/Pods-JohnnyTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1E3AFB920A524B8CDA3685F1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Johnny tvOS/Pods-Johnny tvOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2426C00B2B18AC68985090F3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JohnnyTests/Pods-JohnnyTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		283EE64A8FEC4809223F2190 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Johnny iOS/Pods-Johnny iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		35C9F0342C26DBB4203660FD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		58ACCE4289832C2A96E0660A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Johnny macOS/Pods-Johnny macOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5CCB0096C6E9CED9B3136569 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6DBAB1717059C69B91B2C7B7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Johnny watchOS/Pods-Johnny watchOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		921A0910FEDBA3FE2E943615 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9CDE54CE15726B32DB9F10F5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C929A2C46B940F17E342A381 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F37A204D1D48A042007603F5 /* Sources */ = {
@@ -829,25 +595,25 @@
 /* Begin XCBuildConfiguration section */
 		F37A20591D48A042007603F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CCF136A6E8AB5C5A16204DF /* Pods-JohnnyTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = JohnnyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.JohnnyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		F37A205A1D48A042007603F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 474BE801599BE96B724D19FD /* Pods-JohnnyTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = JohnnyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.JohnnyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -865,8 +631,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -914,8 +682,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -935,6 +705,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -944,9 +715,9 @@
 		};
 		F3E4CAFC1D256069005B30AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21E0D1CFEDF17136BE09EAF6 /* Pods-Johnny iOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -964,9 +735,9 @@
 		};
 		F3E4CAFD1D256069005B30AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B435968A5BEC6BE4A60F0D31 /* Pods-Johnny iOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -983,7 +754,6 @@
 		};
 		F3E4CB361D2572FC005B30AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A171EDD20823B565EA5999B4 /* Pods-Johnny macOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1006,7 +776,6 @@
 		};
 		F3E4CB371D2572FC005B30AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FC5D89D3711B8236CC9AEAF /* Pods-Johnny macOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1029,8 +798,8 @@
 		};
 		F3E4CB441D2573CD005B30AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A244C2BFA1C8A46165B8EFB /* Pods-Johnny tvOS.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1051,8 +820,8 @@
 		};
 		F3E4CB451D2573CD005B30AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D92C9C95885D262CEBDA5A29 /* Pods-Johnny tvOS.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1073,9 +842,9 @@
 		};
 		F3E4CB511D2573FF005B30AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 324A1C6FCFCDE4D4607FFA6C /* Pods-Johnny watchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1096,9 +865,9 @@
 		};
 		F3E4CB521D2573FF005B30AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2940E9CDE17C13BEF89587FD /* Pods-Johnny watchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

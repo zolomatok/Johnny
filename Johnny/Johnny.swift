@@ -7,22 +7,21 @@
 //
 
 import Foundation
-import Async
-  #if UIKIT_COMPATIBLE
-import UIKit
-  #endif
+#if UIKIT_COMPATIBLE
+    import UIKit
+#endif
 
 
 // Used to add T to NSCache
 class Shell : NSObject {
-    let value: Any
-    init(value: Any) {
+    let value: Any?
+    init(value: Any?) {
         self.value = value
     }
 }
 
 
-public class Johnny {
+open class Johnny {
     
     static let memory = Memory()
     static let disk = Disk()
@@ -35,33 +34,41 @@ public class Johnny {
      - parameter value: The value to be cached
      - parameter key:   The key for pulling the object from the cache
      */
-    public class func cache<T: Storable>(value: T?, key: String) {
+    open class func cache<T: Storable>(_ value: T?, key: String, library: Bool = false) {
+        
+        guard let value = value else {
+            return
+        }
         
         // Store in memory
         memory[key] = Shell(value: value)
         
         // Store in disk
-        Async.background {
-            let data = value?.toData()
-            disk[key] = data
+        DispatchQueue.global(qos: .background).async {
+            let data = value.toData()
+            disk[key, library] = data
         }
     }
-    
+
     /**
      Caches an array of Storable objects
      
      - parameter array: The array to be cached
      - parameter key:   The key for pulling the object from the cache
      */
-    public class func cache<T: Storable>(array: [T]?, key: String) {
+    open class func cache<T: Storable>(_ array: [T]?, key: String, library: Bool = false) {
+        
+        guard let array = array else {
+            return
+        }
         
         // Store in memory
         memory[key] = Shell(value: array)
         
         // Store in disk
-        Async.background {
-            let data = array?.toData()
-            disk[key] = data
+        DispatchQueue.global(qos: .background).async {
+            let data = array.toData()
+            disk[key, library] = data
         }
     }
     
@@ -71,15 +78,19 @@ public class Johnny {
      - parameter dictionary: The dictionary to be cached
      - parameter key:        The key for pulling the object from the cache
      */
-    public class func cache<U: StringLiteralConvertible, T: Storable>(dictionary: [U:T]?, key: String) {
+    open class func cache<U: ExpressibleByStringLiteral, T: Storable>(_ dictionary: [U:T]?, key: String, library: Bool = false) {
+        
+        guard let dictionary = dictionary else {
+            return
+        }
         
         // Store in memory
         memory[key] = Shell(value: dictionary)
         
         // Store in disk
-        Async.background {
-            let data = dictionary?.toData()
-            disk[key] = data
+        DispatchQueue.global(qos: .background).async {
+            let data = dictionary.toData()
+            disk[key, library] = data
         }
     }
     
@@ -89,16 +100,32 @@ public class Johnny {
      - parameter dictionary: The set to be cached
      - parameter key:        The key for pulling the object from the cache
      */
-    public class func cache<T: Storable>(set: Set<T>?, key: String) {
+    open class func cache<T: Storable>(_ set: Set<T>?, key: String, library: Bool = false) {
+        
+        guard let set = set else {
+            return
+        }
         
         // Store in memory
         memory[key] = Shell(value: set)
         
         // Store in disk
-        Async.background {
-            let data = set?.toData()
-            disk[key] = data
+        DispatchQueue.global(qos: .background).async {
+            let data = set.toData()
+            disk[key, library] = data
         }
+    }
+    
+    
+    // MARK: - Delete
+    /**
+     Delete a Storable object
+     
+     - parameter key:   The key for deleting the object from the cache
+     */
+    open class func delete(_ key: String, library: Bool = false) {
+        memory[key] = nil
+        disk[key, library] = nil
     }
     
     
@@ -111,14 +138,14 @@ public class Johnny {
      
      - returns: The stored object, nil if not found
      */
-    public class func pull<T: Storable>(key: String) -> T? {
+    open class func pull<T: Storable>(_ key: String, library: Bool = false) -> T? {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? T { return value }
 
         
         // Check disk
-        if let data = disk[key] {
+        if let data = disk[key, library] {
     
             let value = T.fromData(data)
             if let value = value { memory[key] = Shell(value: value) }
@@ -135,16 +162,16 @@ public class Johnny {
      
      - returns: The stored array, nil if not found
      */
-    public class func pull<T: Storable>(key: String) -> [T]? {
+    open class func pull<T: Storable>(_ key: String, library: Bool = false) -> [T]? {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? [T] { return value }
         
         
         // Check disk
-        if let data = disk[key] {
+        if let data = disk[key, library] {
             
-            let dataArray = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [NSData]
+            let dataArray = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? [Data]
             let value = dataArray?.map{ T.fromData($0) as! T}
             if let value = value { memory[key] = Shell(value: value) }
             return value
@@ -160,16 +187,16 @@ public class Johnny {
      
      - returns: The stored dictionary, nil if not found
      */
-    public class func pull<T: Storable>(key: String) -> [String: T]? {
+    open class func pull<T: Storable>(_ key: String, library: Bool = false) -> [String: T]? {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? [String: T] { return value }
 
         
         // Check disk
-        if let data = disk[key] {
+        if let data = disk[key, library] {
             
-            let dataMap = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: NSData]
+            let dataMap = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? [String: Data]
             let value = dataMap?.map{ T.fromData($0) as! T }
             if let value = value { memory[key] = Shell(value: value) }
             return value
@@ -185,17 +212,17 @@ public class Johnny {
      
      - returns: The stored set, nil if not found
      */
-    public class func pull<T: Storable>(key: String) -> Set<T>? {
+    open class func pull<T: Storable>(_ key: String, library: Bool = false) -> Set<T>? {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? Set<T> { return value }
         
         
         // Check disk
-        if let data = disk[key] {
+        if let data = disk[key, library] {
 
             var value: Set<T>?
-            let dataSet = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Set<NSData>
+            let dataSet = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? Set<Data>
             let array = dataSet?.map{ T.fromData($0) as! T }
             if let array = array {
                 value = Set(array)
@@ -218,27 +245,29 @@ public class Johnny {
      
      - returns: The stored object, nil if not found
      */
-    public class func pull<T: Storable>(key: String, completion: ((value: T?)->Void)? = nil ) {
+    open class func pull<T: Storable>(_ key: String, library: Bool = false, completion: ((_ value: T?)->Void)? = nil ) {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? T {
-            completion?(value: value)
+            completion?(value)
             return
         }
         
         
         // Check disk
         var value: T?
-        Async.background {
-            let data = disk[key]
+        DispatchQueue.global(qos: .background).async {
+            let data = disk[key, library]
             if data != nil {
                 value = T.fromData(data!) as? T
             }
-        }.main { 
-            guard let value = value else { completion?(value: nil); return }
             
-            memory[key] = Shell(value: value)
-            completion?(value: value)
+            DispatchQueue.main.async {
+                guard let value = value else { completion?(nil); return }
+                
+                memory[key] = Shell(value: value)
+                completion?(value)
+            }
         }
     }
     
@@ -249,28 +278,30 @@ public class Johnny {
      
      - returns: The stored array, nil if not found
      */
-    public class func pull<T: Storable>(key: String, completion: ((value: [T]?)->Void)? = nil ) {
+    open class func pull<T: Storable>(_ key: String, library: Bool = false, completion: ((_ value: [T]?)->Void)? = nil ) {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? [T] {
-            completion?(value: value)
+            completion?(value)
             return
         }
     
         
         // Check disk
         var value: [T]?
-        Async.background {
-            let data = disk[key]
+        DispatchQueue.global(qos: .background).async {
+            let data = disk[key, library]
             if data != nil {
-                let dataArray = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as? [NSData]
-                value = dataArray?.map{ T.fromData($0) as! T}
+                let dataArray = NSKeyedUnarchiver.unarchiveObject(with: data!) as? [Data]
+                value = dataArray?.map{ T.fromData($0 as Data) as! T}
             }
-        }.main {
-            guard let value = value else { completion?(value: nil); return }
+            
+            DispatchQueue.main.async {
+                guard let value = value else { completion?(nil); return }
                 
-            memory[key] = Shell(value: value)
-            completion?(value: value)
+                memory[key] = Shell(value: value)
+                completion?(value)
+            }
         }
     }
     
@@ -281,28 +312,30 @@ public class Johnny {
      
      - returns: The stored dictionary, nil if not found
      */
-    public class func pull<T: Storable>(key: String, completion: ((value: [String: T]?)->Void)? = nil ) {
+    open class func pull<T: Storable>(_ key: String, library: Bool = false, completion: ((_ value: [String: T]?)->Void)? = nil ) {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? [String: T] {
-            completion?(value: value)
+            completion?(value)
             return
         }
         
         
         // Check disk
         var value: [String: T]?
-        Async.background {
-            let data = disk[key]
+        DispatchQueue.global(qos: .background).async {
+            let data = disk[key, library]
             if let data = data {
-                let dataMap = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: NSData]
+                let dataMap = NSKeyedUnarchiver.unarchiveObject(with: data) as? [String: Data]
                 value = dataMap?.map{ T.fromData($0) as! T}
             }
-        }.main {
-            guard let value = value else { completion?(value: nil); return }
+            
+            DispatchQueue.main.async {
+                guard let value = value else { completion?(nil); return }
                 
-            memory[key] = Shell(value: value)
-            completion?(value: value)
+                memory[key] = Shell(value: value)
+                completion?(value)
+            }
         }
     }
     
@@ -313,31 +346,33 @@ public class Johnny {
      
      - returns: The stored set, nil if not found
      */
-    public class func pull<T: Storable>(key: String, completion: ((value: Set<T>?)->Void)? = nil ) {
+    open class func pull<T: Storable>(_ key: String, library: Bool = false, completion: ((_ value: Set<T>?)->Void)? = nil ) {
         
         // Check memory
         if let value = (memory[key] as? Shell)?.value as? Set<T> {
-            completion?(value: value)
+            completion?(value)
             return
         }
 
         
         // Check disk
         var value: Set<T>?
-        Async.background {
-            let data = disk[key]
+        DispatchQueue.global(qos: .background).async {
+            let data = disk[key, library]
             if let data = data {
-                let dataSet = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Set<NSData>
+                let dataSet = NSKeyedUnarchiver.unarchiveObject(with: data) as? Set<Data>
                 let array = dataSet?.map{ T.fromData($0) as! T }
                 if let array = array {
                     value = Set(array)
                 }
             }
-        }.main {
-            guard let value = value else { completion?(value: nil); return }
             
-            memory[key] = Shell(value: value)
-            completion?(value: value)
+            DispatchQueue.main.async {
+                guard let value = value else { completion?(nil); return }
+                
+                memory[key] = Shell(value: value)
+                completion?(value)
+            }
         }
     }
     
@@ -347,7 +382,7 @@ public class Johnny {
     /**
      Nukes the entire cache from memory & disk
      */
-    @objc public class func nuke() {
+    @objc open class func nuke() {
         memory.removeAllObjects()
         disk.nuke(nil)
     }

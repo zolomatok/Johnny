@@ -1,23 +1,22 @@
 ![Logo](/Johnny/johnny-logo.png?raw=true)
 
 ![pod](https://cdn.rawgit.com/zolomatok/Johnny/master/pod.svg)
-![language](https://cdn.rawgit.com/zolomatok/Johnny/master/language.svg)
 ![platform](https://cdn.rawgit.com/zolomatok/Johnny/master/platform.svg)
 ![license](https://cdn.rawgit.com/zolomatok/Johnny/master/license.svg)
 
-Johnny is a caching library written in Swift.
+Johnny is a caching library written in Swift 3.
 
 ## Features
-- [x] Multiplatform, supporting iOS, macOS, tvOS & watchOS
-- [x] First-level memory cache using `NSCache`
-- [x] Second-level LRU disk cache
 - [x] Generic cache with out-of-the-box support for
-  - String, Bool, Int, UInt, Int64, UInt64, Float, Double (+ Date, Data & URL in the `swift3 branch`)
-  - NSData, NSDate
+  - String, Bool, Int, UInt, Int64, UInt64, Float, Double
+  - URL, Data, Date
   - UIImage, UIColor
   - Arrays, Dictionaries and Sets of the above
   - **Optionals** of the above
   - **Any** type that conforms to the `Storable` protocol
+- [x] Multiplatform, supporting iOS, macOS, tvOS & watchOS
+- [x] First-level memory cache using `NSCache`
+- [x] Second-level LRU disk cache
 - [x] Disk access in background thread (always when saving, optionally when fetching)
 - [x] Syncronous & Asynchronous API support
 - [x] Automatic cache eviction on memory warnings & disk capacity reached
@@ -31,14 +30,14 @@ Extra ❤️ for images:
 
 ###Caching###
 ```swift
-Johnny.cache(NSDate(), key: "FirstStart")
+Johnny.cache(Date(), key: "FirstStart")
 ```
 
 ###Retrieving###
 
 ```swift
 // The type of the retrived value must be explicitly stated for the compiler.
-let date: NSDate? = Johnny.pull("FirstStart")
+let date: Date? = Johnny.pull("FirstStart")
 ```
 
 ###Async fetch###

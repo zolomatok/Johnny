@@ -10,8 +10,8 @@ import Foundation
 
 struct Log {
     
-    private static let Tag = "[JOHNNY]"
-    static func log(message: String, _ error: ErrorType) {
+    fileprivate static let Tag = "[JOHNNY]"
+    static func log(_ message: String, _ error: Error) {
         #if DEBUG
             NSLog(Tag + " " + message + ":" + (error as NSError).description)
         #endif

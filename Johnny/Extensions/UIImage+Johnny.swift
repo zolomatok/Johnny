@@ -17,14 +17,14 @@ extension UIImage : Storable {
     
     public typealias Result = UIImage
     
-    public static func fromData(data: NSData) -> Result? {
+    public static func fromData(_ data: Data) -> Result? {
         imgLock.lock()
         let img = UIImage(data: data)
         imgLock.unlock()
         return img
     }
     
-    public func toData() -> NSData {
+    public func toData() -> Data {
         return UIImageJPEGRepresentation(self, 1.0)!
     }
 }
@@ -33,21 +33,25 @@ extension UIImage : Storable {
 extension UIImage {
     
     func hasAlpha() -> Bool {
-        let alpha = CGImageGetAlphaInfo(self.CGImage)
+        
+        guard let alpha = self.cgImage?.alphaInfo else {
+            return false
+        }
+        
         switch alpha {
-        case .First, .Last, .PremultipliedFirst, .PremultipliedLast, .Only:
+        case .first, .last, .premultipliedFirst, .premultipliedLast, .alphaOnly:
             return true
-        case .None, .NoneSkipFirst, .NoneSkipLast:
+        case .none, .noneSkipFirst, .noneSkipLast:
             return false
         }
     }
     
     
-    func scaledToSize(toSize: CGSize) -> UIImage {
+    func scaledToSize(_ toSize: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(toSize, !hasAlpha(), 0.0)
-        drawInRect(CGRectMake(0, 0, toSize.width, toSize.height))
+        draw(in: CGRect(x: 0, y: 0, width: toSize.width, height: toSize.height))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return resizedImage
+        return resizedImage!
     }
 }
