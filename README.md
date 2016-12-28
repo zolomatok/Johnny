@@ -3,7 +3,7 @@
 ![platform](https://cdn.rawgit.com/zolomatok/Johnny/master/platform.svg)
 ![license](https://cdn.rawgit.com/zolomatok/Johnny/master/license.svg)
 
-Johnny is a caching library written in Swift 3.
+Johnny is a generic caching library written in Swift 3.
 
 ## Features
 **Johnny can cache any model object that conforms to the `Storable` protocol.**
@@ -13,8 +13,8 @@ Johnny is a caching library written in Swift 3.
 ```swift
 public protocol Storable {
     associatedtype Result
-    static func fromData(data: NSData) -> Result?
-    func toData() -> NSData
+    static func fromData(data: Data) -> Result?
+    func toData() -> Data
 }
 ```
 
@@ -23,7 +23,6 @@ public protocol Storable {
   - URL, Data, Date
   - UIImage, UIColor
   - Arrays, Dictionaries and Sets of the above
-
 - [x] Multiplatform, supporting iOS, macOS, tvOS & watchOS
 - [x] First-level memory cache using `NSCache`
 - [x] Second-level LRU disk cache
