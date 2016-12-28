@@ -39,39 +39,35 @@ Extra ❤️ for images:
 
 ###Caching###
 ```swift
-Johnny.cache(Date(), key: "FirstStart")
+Johnny.cache(user, key: "LocalUser")
+
+// You can flag a value to be stored in the Library instead of the Caches folder if you don't want it to be automatically purged:
+Johnny.cache(Date(), key: "FirstStart", library: true)
 ```
 
-###Retrieving###
+###Pulling###
 
 ```swift
 // The type of the retrived value must be explicitly stated for the compiler.
 let date: Date? = Johnny.pull("FirstStart")
-```
 
-###Async fetch###
+// If you know you are retrieving a large object (> 1.5 MB) you can do it asynchronously
+Johnny.pull("4KImage") { (image: UIImage?) in
 
-If you know you are retrieving a large object (> 1.5 MB):
-
-```swift
-Johnny.pull("4KImage") { (value: UIImage?) in
-     
 }
 ```
 
-###Prefix###
-
-You can set a global prefix that gets attached to the key parameter in every call to enable for example caching of data on a per userID basis. 
-
+###Removing###
 ```swift
-Johnny.prefix = localUser.userID
+Johnny.remove("LocalUser")
 ```
+
 
 ## Examples
 
 ###Collections ###
 
-You can cache any collection of items conforming to the Storable protocol (most Stdlib data types already do)
+You can cache any collection of items conforming to the Storable protocol (most standard library data types already do)
 
 ```swift
 let array: [String] = ["Folsom", "Prison", "Blues"]
