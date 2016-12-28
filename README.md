@@ -133,7 +133,7 @@ let cachedJohn: User = Johnny.pull("John")
 - macOS 10.10+
 - tvOS 9.0+
 - watchOS 2.0+
-- Swift 2.0+ (there's also a swift3 branch)
+- Swift 3.0+
 
 ## Install
 
