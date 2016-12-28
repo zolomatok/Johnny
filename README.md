@@ -1,19 +1,29 @@
 ![Logo](/Johnny/johnny-logo.png?raw=true)
 
-![pod](https://cdn.rawgit.com/zolomatok/Johnny/master/pod.svg)
 ![platform](https://cdn.rawgit.com/zolomatok/Johnny/master/platform.svg)
 ![license](https://cdn.rawgit.com/zolomatok/Johnny/master/license.svg)
 
 Johnny is a caching library written in Swift 3.
 
 ## Features
-- [x] Generic cache with out-of-the-box support for
+**Johnny can cache any model object that conforms to the `Storable` protocol.**
+
+*Note, that since the protocol uses a static constructor function instead of an initializer, you can extend any class and make them conform to `Storable`, even if you don't have access to its source (for example, Apple's classes)*
+
+```swift
+public protocol Storable {
+    associatedtype Result
+    static func fromData(data: NSData) -> Result?
+    func toData() -> NSData
+}
+```
+
+- [x] Out-of-the-box support:
   - String, Bool, Int, UInt, Int64, UInt64, Float, Double
   - URL, Data, Date
   - UIImage, UIColor
   - Arrays, Dictionaries and Sets of the above
-  - **Optionals** of the above
-  - **Any** type that conforms to the `Storable` protocol
+
 - [x] Multiplatform, supporting iOS, macOS, tvOS & watchOS
 - [x] First-level memory cache using `NSCache`
 - [x] Second-level LRU disk cache
@@ -59,18 +69,6 @@ Johnny.prefix = localUser.userID
 ```
 
 ## Examples
-
-### Storable ###
-
-*Note, that since the protocol uses a static constructor function instead of an initializer, you can extend any class without errors, even if you don't have access to its source (like Standard library classes)*
-
-```swift
-public protocol Storable {
-    associatedtype Result
-    static func fromData(data: NSData) -> Result?
-    func toData() -> NSData
-}
-```
 
 ###Collections ###
 
