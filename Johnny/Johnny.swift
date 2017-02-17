@@ -37,7 +37,6 @@ open class Johnny {
     open class func cache<T: Storable>(_ value: T?, key: String, library: Bool = false) {
         
         guard let value = value else {
-            print("")
             return
         }
         
