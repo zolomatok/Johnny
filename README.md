@@ -139,9 +139,22 @@ let cachedJohn: User = Johnny.pull("John")
 
 **CocoaPods**
 
-```swift
+```
 pod 'Johnny'
 ```
+
+**Carthage**
+
+```
+github "zolomatok/Johnny"
+```
+
+**Manual**
+- Clone the project
+- Select the scheme (platform) and build
+- Drag Johnny.framework to your project
+- In the project settings under your target's General tab, scroll down and add Johhny to the ```Embedded Binaries``` section if it's not already added.
+
 
 ## Attribution
 I'd like to thank the creators of [Pantry](https://github.com/nickoneill/Pantry) and [Haneke](https://github.com/Haneke/HanekeSwift) as those projects provided much of the inspiration and some code. Johnny was dreamed up to be the best of both worlds.
