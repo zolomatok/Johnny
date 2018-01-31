@@ -111,7 +111,7 @@ static func fromData(data: NSData) -> User.Result? {
 }
 
 func toData() -> NSData {
-    let json = ["identification": uid, "name": name, "badasery": badassery.rawValue]
+    let json = ["identification": uid, "name": name, "badassery": badassery.rawValue]
     return try! NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions())
     }
 }
