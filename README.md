@@ -87,11 +87,11 @@ Due to current Swift limitations, since the Storable protocol has an `associated
 
 
 ```swift
-class User {
+struct User {
 
     enum Badassery: String { case Total }
 
-    var name: String? = "Johnny"
+    var name: String? = "Lily"
     var uid: Int = 84823682
     var badassery = Badassery.Total
 }
@@ -121,7 +121,7 @@ func toData() -> NSData {
 
 
 ```swift
-let lily = User(name: "Lily")
+let lily = User()
 Johnny.cache(lily, key: "Lily")
 
 let cachedLily: User = Johnny.pull("Lily")
