@@ -37,7 +37,7 @@ Extra ❤️ for images:
 
 ## Usage
 
-###Caching###
+### Caching ###
 ```swift
 Johnny.cache(user, key: "LocalUser")
 
@@ -45,7 +45,7 @@ Johnny.cache(user, key: "LocalUser")
 Johnny.cache(Date(), key: "FirstStart", library: true)
 ```
 
-###Pulling###
+### Pulling ###
 
 ```swift
 // The type of the retrived value must be explicitly stated for the compiler.
@@ -57,7 +57,7 @@ Johnny.pull("4KImage") { (image: UIImage?) in
 }
 ```
 
-###Removing###
+### Removing ###
 ```swift
 Johnny.remove("LocalUser")
 ```
@@ -65,7 +65,7 @@ Johnny.remove("LocalUser")
 
 ## Examples
 
-###Collections ###
+### Collections ###
 
 You can cache any collection of items conforming to the Storable protocol (most standard library data types already do)
 
@@ -121,9 +121,10 @@ func toData() -> NSData {
 
 
 ```swift
-let johnny: User = User()
-Johnny.cache(johnny, key: "John")
-let cachedJohn: User = Johnny.pull("John")
+let lily = User(name: "Lily")
+Johnny.cache(jake, key: "Lily")
+
+let cachedLily: User = Johnny.pull("Lily")
 ```
 
 
