@@ -122,7 +122,7 @@ func toData() -> NSData {
 
 ```swift
 let lily = User(name: "Lily")
-Johnny.cache(jake, key: "Lily")
+Johnny.cache(lily, key: "Lily")
 
 let cachedLily: User = Johnny.pull("Lily")
 ```
