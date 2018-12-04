@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class Memory: NSCache<AnyObject, AnyObject> {
     
     override init() {

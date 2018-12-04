@@ -26,13 +26,13 @@ extension UIImageView {
         
         
         // Get cache
-        Johnny.pull(url) { (cached: UIImage?) in
+        Johnny.pull(url) { (cached: Image?) in
             
             
             // Return cached value
             if let cached = cached {
-                if completion == nil { self.image = cached }
-                else { completion?(cached) }
+                if completion == nil { self.image = cached.uiImage() }
+                else { completion?(cached.uiImage()) }
                 return
             }
             
@@ -48,7 +48,7 @@ extension UIImageView {
                 
                 DispatchQueue.main.async {
                     // Save to cache & return
-                    if img != nil { Johnny.cache(img, key: url) }
+                    if let img = img { Johnny.cache(Image(image: img), key: url) }
                     if completion == nil {
                         self.image = img
                     }

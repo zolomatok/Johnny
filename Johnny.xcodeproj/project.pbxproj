@@ -27,7 +27,6 @@
 		F37A20601D48AC3A007603F5 /* johnny-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F35901881D2AA55400868171 /* johnny-logo.png */; };
 		F3E4CAF71D256069005B30AB /* Johnny.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E4CAF61D256069005B30AB /* Johnny.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB001D25634F005B30AB /* Disk.swift */; };
-		F3E4CB0D1D25634F005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
 		F3E4CB101D25634F005B30AB /* UIImage+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */; };
 		F3E4CB111D25634F005B30AB /* UIImageView+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */; };
 		F3E4CB121D25634F005B30AB /* Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB081D25634F005B30AB /* Johnny.swift */; };
@@ -48,10 +47,7 @@
 		F3E4CB5C1D257554005B30AB /* Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB081D25634F005B30AB /* Johnny.swift */; };
 		F3E4CB5D1D257554005B30AB /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB0A1D25634F005B30AB /* Memory.swift */; };
 		F3E4CB5E1D257554005B30AB /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB001D25634F005B30AB /* Disk.swift */; };
-		F3E4CB601D25755D005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
-		F3E4CB661D25755E005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
 		F3E4CB6A1D25755E005B30AB /* UIImageView+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */; };
-		F3E4CB6C1D25755E005B30AB /* Stdlib+Johnny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */; };
 		F3E4CB711D25756A005B30AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB091D25634F005B30AB /* Log.swift */; };
 		F3E4CB721D25756B005B30AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB091D25634F005B30AB /* Log.swift */; };
 		F3E4CB731D25756B005B30AB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E4CB091D25634F005B30AB /* Log.swift */; };
@@ -92,7 +88,6 @@
 		F3E4CAF61D256069005B30AB /* Johnny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Johnny.h; sourceTree = "<group>"; };
 		F3E4CAF81D256069005B30AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E4CB001D25634F005B30AB /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
-		F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stdlib+Johnny.swift"; sourceTree = "<group>"; };
 		F3E4CB051D25634F005B30AB /* UIButton+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Johnny.swift"; sourceTree = "<group>"; };
 		F3E4CB061D25634F005B30AB /* UIImage+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Johnny.swift"; sourceTree = "<group>"; };
 		F3E4CB071D25634F005B30AB /* UIImageView+Johnny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Johnny.swift"; sourceTree = "<group>"; };
@@ -180,7 +175,6 @@
 		F3D0533D1D47E26A00D9AA84 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				F3E4CB031D25634F005B30AB /* Stdlib+Johnny.swift */,
 				F35901371D2A7DEC00868171 /* Foundation+Johnny.swift */,
 			);
 			path = common;
@@ -422,16 +416,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Zoltán Matók";
 				TargetAttributes = {
 					F37A20501D48A042007603F5 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 					};
 					F3E4CAF21D256069005B30AB = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 					};
 					F3E4CB301D2572FC005B30AB = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -526,7 +520,6 @@
 				F35901381D2A7DEC00868171 /* Foundation+Johnny.swift in Sources */,
 				F3E4CB131D25634F005B30AB /* Log.swift in Sources */,
 				F3036D361D2584A80056BCE4 /* UIButton+Johnny.swift in Sources */,
-				F3E4CB0D1D25634F005B30AB /* Stdlib+Johnny.swift in Sources */,
 				F3382FB91D2594D3009C2110 /* UIColor+Johnny.swift in Sources */,
 				F3E4CB121D25634F005B30AB /* Johnny.swift in Sources */,
 				F3E4CB0B1D25634F005B30AB /* Disk.swift in Sources */,
@@ -542,7 +535,6 @@
 				F3E4CB711D25756A005B30AB /* Log.swift in Sources */,
 				F35901391D2A7DF100868171 /* Foundation+Johnny.swift in Sources */,
 				F359013E1D2A822400868171 /* AppKit+Johnny.swift in Sources */,
-				F3E4CB601D25755D005B30AB /* Stdlib+Johnny.swift in Sources */,
 				F3E4CB581D257552005B30AB /* Disk.swift in Sources */,
 				F3E4CB571D257552005B30AB /* Memory.swift in Sources */,
 				F3E4CB561D257552005B30AB /* Johnny.swift in Sources */,
@@ -556,7 +548,6 @@
 				F359013A1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */,
 				F30F64921D46A39A00EDD75F /* UIButton+Johnny.swift in Sources */,
 				F3E4CB721D25756B005B30AB /* Log.swift in Sources */,
-				F3E4CB661D25755E005B30AB /* Stdlib+Johnny.swift in Sources */,
 				F3382FBA1D2594D8009C2110 /* UIColor+Johnny.swift in Sources */,
 				F3E4CB5B1D257553005B30AB /* Disk.swift in Sources */,
 				F3036D381D2584C30056BCE4 /* UIImage+Johnny.swift in Sources */,
@@ -572,7 +563,6 @@
 			files = (
 				F359013B1D2A7DF200868171 /* Foundation+Johnny.swift in Sources */,
 				F3E4CB731D25756B005B30AB /* Log.swift in Sources */,
-				F3E4CB6C1D25755E005B30AB /* Stdlib+Johnny.swift in Sources */,
 				F30F64911D46A27500EDD75F /* WatchKit+Johnny.swift in Sources */,
 				F3E4CB5E1D257554005B30AB /* Disk.swift in Sources */,
 				F3382FBB1D2594D9009C2110 /* UIColor+Johnny.swift in Sources */,
@@ -601,7 +591,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.JohnnyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -613,7 +604,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.JohnnyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -626,14 +618,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -677,14 +675,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -730,7 +734,8 @@
 				PRODUCT_NAME = Johnny;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -750,7 +755,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ZoltanMatok.Johnny;
 				PRODUCT_NAME = Johnny;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

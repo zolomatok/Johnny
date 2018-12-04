@@ -3,25 +3,15 @@
 ![platform](https://cdn.rawgit.com/zolomatok/Johnny/master/platform.svg)
 ![license](https://cdn.rawgit.com/zolomatok/Johnny/master/license.svg)
 
-Johnny is a generic caching library written in Swift 3.
+Johnny is a generic caching library written for Swift 4.
 
 ## Features
-**Johnny can cache any model object that conforms to the `Storable` protocol.**
-
-*Note, that since the protocol uses a static constructor function instead of an initializer, you can extend any class and make them conform to `Storable`, even if you don't have access to its source (for example, Apple's classes)*
-
-```swift
-public protocol Storable {
-    associatedtype Result
-    static func fromData(data: Data) -> Result?
-    func toData() -> Data
-}
-```
+**Johnny can cache any model object that conforms to the `Cachable` protocol.**
 
 - [x] Out-of-the-box support:
   - String, Bool, Int, UInt, Int64, UInt64, Float, Double
   - URL, Data, Date
-  - UIImage, UIColor
+  - UIImage, UIColor **by wrapping them in an Image or Color wrapper class respectively**
   - Arrays, Dictionaries and Sets of the above
 - [x] Multiplatform, supporting iOS, macOS, tvOS & watchOS
 - [x] First-level memory cache using `NSCache`
@@ -41,6 +31,9 @@ Extra ❤️ for images:
 ```swift
 Johnny.cache(user, key: "LocalUser")
 
+let imgage = UIImage(named: "awesomeness")
+Johnny.cache(Image(image), key: "Image") // Caching a UIImage. UIColor objects must be wrapped in the Color wrapper class the same way.
+
 // You can flag a value to be stored in the Library instead of the Caches folder if you don't want it to be automatically purged:
 Johnny.cache(Date(), key: "FirstStart", library: true)
 ```
@@ -52,8 +45,8 @@ Johnny.cache(Date(), key: "FirstStart", library: true)
 let date: Date? = Johnny.pull("FirstStart")
 
 // If you know you are retrieving a large object (> 1.5 MB) you can do it asynchronously
-Johnny.pull("4KImage") { (image: UIImage?) in
-
+Johnny.pull("4KImage") { (image: Image?) in
+    let img = image.uiImage()
 }
 ```
 
@@ -80,60 +73,12 @@ Johnny.cache(stringSet, key: "everywhere")
 Johnny.cache(dictionary, key: "solitary")
 ```
 
-### Custom types ###
-
-Due to current Swift limitations, since the Storable protocol has an `associatedType`, conformance must be added through an extension.
-`class User: Storable` will not work.
-
-
-```swift
-class User {
-
-    enum Badassery: String { case Total }
-
-    var name: String? = "Johnny"
-    var uid: Int = 84823682
-    var badassery = Badassery.Total
-}
-
-
-extension User: Storable {
-typealias Result = User
-
-static func fromData(data: NSData) -> User.Result? {
-    let dict = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions()) as! [NSObject: AnyObject]
-
-    let user = User()
-    user.uid = dict["identification"] as! Int
-    user.name = dict["name"] as? String
-    user.badassery = Badassery(rawValue: dict["badassery"] as! String)!
-    return user
-}
-
-func toData() -> NSData {
-    let json = ["identification": uid, "name": name, "badasery": badassery.rawValue]
-    return try! NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions())
-    }
-}
-```
-
-**Using it with Johnny:**
-
-
-```swift
-let johnny: User = User()
-Johnny.cache(johnny, key: "John")
-let cachedJohn: User = Johnny.pull("John")
-```
-
-
-
 ## Requirements
 - iOS 8.0+
 - macOS 10.10+
 - tvOS 9.0+
 - watchOS 2.0+
-- Swift 3.0+
+- Swift 4.0
 
 ## Install
 

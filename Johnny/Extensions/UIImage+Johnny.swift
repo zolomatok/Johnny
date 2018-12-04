@@ -13,19 +13,18 @@ import UIKit
 
 // See: https://github.com/AFNetworking/AFNetworking/issues/2572#issuecomment-115854482
 private let imgLock = NSLock()
-extension UIImage : Storable {
-    
-    public typealias Result = UIImage
-    
-    public static func fromData(_ data: Data) -> Result? {
-        imgLock.lock()
-        let img = UIImage(data: data)
-        imgLock.unlock()
-        return img
+
+class Image: Codable {
+    let data: Data
+    init(image: UIImage) {
+        data = UIImageJPEGRepresentation(image, 1.0)!
     }
     
-    public func toData() -> Data {
-        return UIImageJPEGRepresentation(self, 1.0)!
+    func uiImage() -> UIImage {
+        imgLock.lock()
+        let img = UIImage(data: data)!
+        imgLock.unlock()
+        return img
     }
 }
 

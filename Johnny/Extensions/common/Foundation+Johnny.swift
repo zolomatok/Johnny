@@ -9,6 +9,8 @@
 import Foundation
 import CoreGraphics
 
+protocol Cachable: Codable {}
+
 extension CGSize {
     
     func aspectFillSize(_ size: CGSize) -> CGSize {
@@ -32,34 +34,6 @@ extension CGSize {
             resultSize.height = size.width / sourceAspect
         }
         return CGSize(width: ceil(resultSize.width), height: ceil(resultSize.height))
-    }
-}
-
-
-extension Data : Storable {
-    
-    public typealias Result = Data
-    
-    public static func fromData(_ data: Data) -> Result? {
-        return data
-    }
-    
-    public func toData() -> Data {
-        return self
-    }
-}
-
-
-extension Date : Storable {
-    
-    public typealias Result = Date
-    
-    public static func fromData(_ data: Data) -> Result? {
-        return NSKeyedUnarchiver.unarchiveObject(with: data) as? Date
-    }
-    
-    public func toData() -> Data {
-        return NSKeyedArchiver.archivedData(withRootObject: self)
     }
 }
 

@@ -8,15 +8,14 @@
 
 import UIKit
 
-extension UIColor : Storable {
-    
-    public typealias Result = UIColor
-    
-    public static func fromData(_ data: Data) -> Result? {
-        return NSKeyedUnarchiver.unarchiveObject(with: data) as? UIColor
+class Color: Codable {
+    let colorString: String
+    init(color: UIColor) {
+        colorString = CIColor(cgColor: color.cgColor).stringRepresentation
     }
     
-    public func toData() -> Data {
-        return NSKeyedArchiver.archivedData(withRootObject: self)
+    func uiColor() -> UIColor {
+        let ciColor = CIColor(string: colorString)
+        return UIColor(ciColor: ciColor)
     }
 }
