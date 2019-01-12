@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
     s.source   = { :git => "https://github.com/zolomatok/Johnny.git", :tag => "3.0.2"}
     s.requires_arc = true
     s.module_name = 'Johnny'
+    s.swift_version = '4.0'
 
     s.osx.deployment_target = "10.10"
     s.ios.deployment_target = "8.0"
