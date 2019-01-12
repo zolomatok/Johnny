@@ -27,7 +27,7 @@ Extra ❤️ for images:
 
 ## Usage
 
-###Caching###
+### Caching ###
 ```swift
 Johnny.cache(user, key: "LocalUser")
 
@@ -38,7 +38,7 @@ Johnny.cache(Image(image), key: "Image") // Caching a UIImage. UIColor objects m
 Johnny.cache(Date(), key: "FirstStart", library: true)
 ```
 
-###Pulling###
+### Pulling ###
 
 ```swift
 // The type of the retrived value must be explicitly stated for the compiler.
@@ -50,7 +50,7 @@ Johnny.pull("4KImage") { (image: Image?) in
 }
 ```
 
-###Removing###
+### Removing ###
 ```swift
 Johnny.remove("LocalUser")
 ```
@@ -58,7 +58,7 @@ Johnny.remove("LocalUser")
 
 ## Examples
 
-###Collections ###
+### Collections ###
 
 You can cache any collection of items conforming to the Storable protocol (most standard library data types already do)
 
@@ -71,6 +71,53 @@ let dictionary: [String: String] = ["first": "Solitary", "second": "man"]
 Johnny.cache(array, key: "folsom")
 Johnny.cache(stringSet, key: "everywhere")
 Johnny.cache(dictionary, key: "solitary")
+```
+
+### Custom types ###
+
+Due to current Swift limitations, since the Storable protocol has an `associatedType`, conformance must be added through an extension.
+`class User: Storable` will not work.
+
+
+```swift
+struct User {
+    
+    enum Badassery: String { case Total }
+    
+    var name: String?
+    var uid: Int
+    var badassery: Badassery
+}
+
+
+extension User: Storable {
+typealias Result = User
+
+static func fromData(data: NSData) -> User.Result? {
+    let dict = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions()) as! [NSObject: AnyObject]
+
+    let user = User()
+    user.uid = dict["identification"] as! Int
+    user.name = dict["name"] as? String
+    user.badassery = Badassery(rawValue: dict["badassery"] as! String)!
+    return user
+}
+
+func toData() -> NSData {
+    let json = ["identification": uid, "name": name, "badassery": badassery.rawValue]
+    return try! NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions())
+    }
+}
+```
+
+**Using it with Johnny:**
+
+
+```swift
+let lily = User(name: "Lily", uid: 84823682, badassery: .Total)
+Johnny.cache(lily, key: "Lily")
+
+let cachedLily: User = Johnny.pull("Lily")
 ```
 
 ## Requirements
