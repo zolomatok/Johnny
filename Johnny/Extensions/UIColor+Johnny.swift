@@ -10,12 +10,17 @@ import UIKit
 
 class Color: Codable {
     let colorString: String
-    init(color: UIColor) {
-        colorString = CIColor(cgColor: color.cgColor).stringRepresentation
+    init?(color: UIColor?) {
+        guard let color = color else { return nil }
+        guard let components = color.cgColor.components else { return nil }
+        colorString = "\(components[0]), \(components[1]), \(components[2]), \(components[3])"
     }
     
     func uiColor() -> UIColor {
-        let ciColor = CIColor(string: colorString)
-        return UIColor(ciColor: ciColor)
+        let components = colorString.components(separatedBy: ", ")
+        return UIColor(red: CGFloat((components[0] as NSString).floatValue),
+                       green: CGFloat((components[1] as NSString).floatValue),
+                       blue: CGFloat((components[2] as NSString).floatValue),
+                       alpha: CGFloat((components[3] as NSString).floatValue))
     }
 }

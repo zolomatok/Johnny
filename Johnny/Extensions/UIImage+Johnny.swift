@@ -13,10 +13,10 @@ import UIKit
 
 // See: https://github.com/AFNetworking/AFNetworking/issues/2572#issuecomment-115854482
 private let imgLock = NSLock()
-
 class Image: Codable {
     let data: Data
-    init(image: UIImage) {
+    init?(image: UIImage?) {
+        guard let image = image else { return nil }
         data = UIImageJPEGRepresentation(image, 1.0)!
     }
     

@@ -12,24 +12,19 @@ import AppKit
 
 // See: https://github.com/AFNetworking/AFNetworking/issues/2572#issuecomment-115854482
 private let imgLock = NSLock()
-extension NSImage : Storable {
-    
-    public typealias Result = NSImage
-    
-    public static func fromData(_ data: Data) -> Result? {
-        imgLock.lock()
-        let img = NSImage(data: data)
-        imgLock.unlock()
-        return img
+class Image: Codable {
+    let data: Data
+    init?(image: NSImage?) {
+        guard let image = image else { return nil }
+        guard let d = image.tiffRepresentation else { return nil }
+        data = d
     }
     
-    // See: http://stackoverflow.com/questions/3698400/how-to-convert-data-to-jpeg-format
-    public func toData() -> Data {
-        let data = self.tiffRepresentation
-        let rep = NSBitmapImageRep(data: data!)
-        let compression = 1.0
-        let properties = [NSImageCompressionFactor: compression]
-        return rep!.representation(using: .JPEG, properties: properties)!
+    func nsImage() -> NSImage {
+        imgLock.lock()
+        let img = NSImage(data: data)!
+        imgLock.unlock()
+        return img
     }
 }
 
@@ -52,13 +47,13 @@ extension NSImageView {
         
         
         // Get cache
-        Johnny.pull(url) { (cached: NSImage?) in
+        Johnny.pull(url) { (cached: Image?) in
             
             
             // Return cached value
             if let cached = cached {
-                if completion == nil { self.image = cached }
-                else { completion?(cached) }
+                if completion == nil { self.image = cached.nsImage() }
+                else { completion?(cached.nsImage()) }
                 return
             }
             
@@ -73,7 +68,7 @@ extension NSImageView {
                 
                 DispatchQueue.main.async {
                     // Save to cache & return
-                    if img != nil { Johnny.cache(img, key: url) }
+                    if img != nil { Johnny.cache(Image(image: img), key: url) }
                     if completion == nil {
                         self.image = img
                     }

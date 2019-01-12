@@ -46,10 +46,10 @@ class JohnnyDiskTests: XCTestCase {
         let double: Double = 20.6
         
         let ip = Bundle(for: type(of: self)).resourcePath! + "/johnny-logo.png"
-        let image = UIImage(contentsOfFile: ip)!
-        let data = image.toData()
+        let image = Image(image: UIImage(contentsOfFile: ip)!)
+        let data = image!.data
         let date: Date = Date(timeIntervalSince1970: 1459355217)
-        let color = UIColor.blue
+        let color = Color(color: UIColor.blue)
         
         
         Johnny.cache(string, key: "testString")
@@ -110,8 +110,8 @@ class JohnnyDiskTests: XCTestCase {
             XCTFail("no default Double could be unpacked")
         }
         
-        if let value: UIImage = Johnny.pull("testImage") {
-            XCTAssert(value.toData() == data, "default Image was incorrect")
+        if let value: Image = Johnny.pull("testImage") {
+            XCTAssert(value.data == data, "default Image was incorrect")
         } else {
             XCTFail("no default Image could be unpacked")
         }
@@ -128,8 +128,8 @@ class JohnnyDiskTests: XCTestCase {
             XCTFail("no default Date could be unpacked")
         }
         
-        if let value: UIColor = Johnny.pull("testColor") {
-            XCTAssert(value == UIColor.blue, "default Color was incorrect")
+        if let value: Color = Johnny.pull("testColor") {
+            XCTAssert(value.uiColor() == UIColor.blue, "default Color was incorrect")
         } else {
             XCTFail("no default Color could be unpacked")
         }
@@ -146,10 +146,10 @@ class JohnnyDiskTests: XCTestCase {
         let double: Double? = 20.6
         
         let ip = Bundle(for: type(of: self)).resourcePath! + "/johnny-logo.png"
-        let image = UIImage(contentsOfFile: ip)
-        let data: Data? = image?.toData()
+        let image = Image(image: UIImage(contentsOfFile: ip))
+        let data: Data? = image?.data
         let date: Date? = Date(timeIntervalSince1970: 1459355217)
-        let color: UIColor? = UIColor.blue
+        let color: Color? = Color(color: UIColor.blue)
         
         
         Johnny.cache(string, key: "testStringOptional")
@@ -210,8 +210,8 @@ class JohnnyDiskTests: XCTestCase {
             XCTFail("no default optional Double could be unpacked")
         }
         
-        if let value: UIImage = Johnny.pull("testImageOptional") {
-            XCTAssert(value.toData() == data, "default optional Image was incorrect")
+        if let value: Image = Johnny.pull("testImageOptional") {
+            XCTAssert(value.data == data, "default optional Image was incorrect")
         } else {
             XCTFail("no default optional Image could be unpacked")
         }
@@ -228,8 +228,8 @@ class JohnnyDiskTests: XCTestCase {
             XCTFail("no default optional Date could be unpacked")
         }
         
-        if let value: UIColor = Johnny.pull("testColorOptional") {
-            XCTAssert(value == UIColor.blue, "default optional Color was incorrect")
+        if let value: Color = Johnny.pull("testColorOptional") {
+            XCTAssert(value.uiColor() == UIColor.blue, "default optional Color was incorrect")
         } else {
             XCTFail("no default optional Color could be unpacked")
         }
@@ -239,8 +239,8 @@ class JohnnyDiskTests: XCTestCase {
     func testCollections() {
         
         let ip = Bundle(for: type(of: self)).resourcePath! + "/johnny-logo.png"
-        let image = UIImage(contentsOfFile: ip)!
-        let data = image.toData()
+        let image = Image(image: UIImage(contentsOfFile: ip)!)
+        let data = image!.data
         
         let stringArray: [String] = ["Heresy", "grows", "from", "idleness"]
         let intArray: [Int] = [1,2]
@@ -327,8 +327,8 @@ class JohnnyDiskTests: XCTestCase {
     
     func testOptionalCollections() {
         let ip = Bundle(for: type(of: self)).resourcePath! + "/johnny-logo.png"
-        let image = UIImage(contentsOfFile: ip)!
-        let data = image.toData()
+        let image = Image(image: UIImage(contentsOfFile: ip)!)
+        let data = image!.data
         
         let stringArray: [String]? = ["Heresy", "grows", "from", "idleness"]
         let intArray: [Int]? = [1,2]
