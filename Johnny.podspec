@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name        = "Johnny"
-    s.version     = "3.0.2"
+    s.version     = "3.0.3"
     s.summary     = "Melodic Caching in Swift"
     s.homepage    = "https://github.com/zolomatok/Johnny"
     s.license     = { :type => "MIT" }
