@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
 
-    public func imageWithURL(_ url: String?, placeholder: UIImage? = nil, completion: ((_ image: UIImage?)->Void)? = nil) {
+    open func imageWithURL(_ url: String?, placeholder: UIImage? = nil, completion: ((_ image: UIImage?)->Void)? = nil) {
         self.imageView?.imageWithURL(url, placeholder: placeholder, completion: completion)
     }
 }

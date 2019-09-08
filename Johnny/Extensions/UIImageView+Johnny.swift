@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    public func imageWithURL(_ url: String?, placeholder: UIImage? = nil, completion: ((_ image: UIImage?)->Void)? = nil) {
+    open func imageWithURL(_ url: String?, placeholder: UIImage? = nil, completion: ((_ image: UIImage?)->Void)? = nil) {
         
         // Handle nil
         guard let url = url else {

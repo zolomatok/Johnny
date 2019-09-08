@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Color: Codable {
+open class Color: Codable {
     let colorString: String
     init?(color: UIColor?) {
         guard let color = color else { return nil }
@@ -16,7 +16,7 @@ class Color: Codable {
         colorString = "\(components[0]), \(components[1]), \(components[2]), \(components[3])"
     }
     
-    func uiColor() -> UIColor {
+    open func uiColor() -> UIColor {
         let components = colorString.components(separatedBy: ", ")
         return UIColor(red: CGFloat((components[0] as NSString).floatValue),
                        green: CGFloat((components[1] as NSString).floatValue),

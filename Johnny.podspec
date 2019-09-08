@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
     s.name        = "Johnny"
-    s.version     = "3.0.3"
+    s.version     = "3.0.4"
     s.summary     = "Melodic Caching in Swift"
     s.homepage    = "https://github.com/zolomatok/Johnny"
     s.license     = { :type => "MIT" }
     s.authors     = { "Zoltán Matók" => "bellamycpt@gmail.com" }
 
-    s.source   = { :git => "https://github.com/zolomatok/Johnny.git", :tag => "3.0.2"}
+    s.source   = { :git => "https://github.com/zolomatok/Johnny.git", :tag => "3.0.4"}
     s.requires_arc = true
     s.module_name = 'Johnny'
     s.swift_version = '4.0'

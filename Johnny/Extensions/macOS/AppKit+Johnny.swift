@@ -31,7 +31,7 @@ class Image: Codable {
 
 extension NSImageView {
     
-    public func imageWithURL(_ url: String?, placeholder: NSImage? = nil, completion: ((_ image: NSImage?)->Void)? = nil) {
+    open func imageWithURL(_ url: String?, placeholder: NSImage? = nil, completion: ((_ image: NSImage?)->Void)? = nil) {
         
         // Handle nil
         guard let url = url else {
