@@ -10,7 +10,7 @@ import UIKit
 
 open class Color: Codable {
     let colorString: String
-    init?(color: UIColor?) {
+    public init?(color: UIColor?) {
         guard let color = color else { return nil }
         guard let components = color.cgColor.components else { return nil }
         colorString = "\(components[0]), \(components[1]), \(components[2]), \(components[3])"

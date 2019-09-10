@@ -15,7 +15,7 @@ import UIKit
 private let imgLock = NSLock()
 open class Image: Codable {
     let data: Data
-    init?(image: UIImage?) {
+    public init?(image: UIImage?) {
         guard let image = image else { return nil }
         data = UIImageJPEGRepresentation(image, 1.0)!
     }
